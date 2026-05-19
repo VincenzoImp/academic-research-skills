@@ -1,0 +1,4 @@
+interface:
+  display_name: "Artifact Open Science"
+  short_description: "Prepare reproducibility packages, artifact-evaluation material, release notes, and open-science checks."
+  default_prompt: "Use $artifact-open-science to package code, data, commands, licenses, and reproducibility evidence for artifact review or release."

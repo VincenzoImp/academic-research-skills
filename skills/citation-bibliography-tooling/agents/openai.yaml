@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citation Bibliography Tooling"
+  short_description: "Normalize BibTeX, citation keys, identifiers, duplicate records, and bibliography audit files."
+  default_prompt: "Use $citation-bibliography-tooling to clean bibliography metadata and keep citation keys, identifiers, and audit notes consistent."

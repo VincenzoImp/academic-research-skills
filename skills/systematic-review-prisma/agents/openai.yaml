@@ -1,0 +1,4 @@
+interface:
+  display_name: "Systematic Review PRISMA"
+  short_description: "Run reproducible search, screening, inclusion decisions, PRISMA counts, and review protocols."
+  default_prompt: "Use $systematic-review-prisma to maintain a transparent systematic or scoping review workflow with screening evidence."

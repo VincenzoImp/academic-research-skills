@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rebuttal Revision Strategy"
+  short_description: "Map reviewer concerns, plan revisions, and draft precise rebuttal or response-letter material."
+  default_prompt: "Use $rebuttal-revision-strategy to convert reviews into concern maps, evidence-backed replies, and revision actions."

@@ -1,0 +1,34 @@
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - github-actions
+      - dependabot
+  categories:
+    - title: Breaking Changes
+      labels:
+        - breaking-change
+        - semver-major
+    - title: Skills
+      labels:
+        - skill
+        - skills
+        - semver-minor
+    - title: Research Workflows
+      labels:
+        - research
+        - documentation
+    - title: Fixes
+      labels:
+        - bug
+        - fix
+        - semver-patch
+    - title: Maintenance
+      labels:
+        - dependencies
+        - ci
+        - maintenance
+    - title: Other Changes
+      labels:
+        - "*"

@@ -1,0 +1,42 @@
+# Systematic Review Policy
+
+Use this when a review needs explicit, reproducible search and screening.
+
+## Review Types
+
+- `narrative`: useful synthesis, not exhaustive.
+- `scoping`: broad map of a field, transparent but often less restrictive.
+- `systematic`: pre-defined search, screening, inclusion/exclusion, and counts.
+- `mapping`: structured categorization of a literature space.
+
+Label the review type before presenting results.
+
+## Controlled Exclusion Reasons
+
+Use short reasons in `sota/screening-decisions.csv`:
+
+- `out-of-scope`
+- `wrong-population`
+- `wrong-method`
+- `wrong-outcome`
+- `not-peer-reviewed`
+- `duplicate`
+- `no-full-text`
+- `not-english`
+- `superseded`
+- `low-relevance`
+- `quality-concern`
+
+## Minimum Artifacts
+
+- `sota/search-strategy.md`
+- `sources/metadata/` raw exports
+- `sota/screening-decisions.csv`
+- `sota/prisma-flow.md`
+- `sota/literature-matrix.csv`
+- `sota/synthesis.md`
+
+## Evidence Rule
+
+Counts and conclusions must name the search date and database scope. Do not use
+"no studies exist" unless the search strategy actually supports that scope.

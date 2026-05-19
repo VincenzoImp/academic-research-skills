@@ -1,0 +1,4 @@
+interface:
+  display_name: "SOTA Literature Review"
+  short_description: "Build and maintain state-of-the-art reviews, paper matrices, gap analyses, and synthesis pages."
+  default_prompt: "Use $sota-literature-review to organize related work into a traceable SOTA matrix, synthesis, and gap analysis."

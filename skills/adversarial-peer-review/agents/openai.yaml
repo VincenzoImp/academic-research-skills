@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adversarial Peer Review"
+  short_description: "Stress-test manuscripts, proposals, methods, claims, and evidence like a severe but fair reviewer."
+  default_prompt: "Use $adversarial-peer-review to produce a rigorous reviewer-style critique with ranked risks and actionable revision guidance."

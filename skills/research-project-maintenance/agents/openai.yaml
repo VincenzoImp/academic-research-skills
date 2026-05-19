@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Project Maintenance"
+  short_description: "Keep research project folders, agent docs, wiki files, ledgers, outputs, and structural checks coherent."
+  default_prompt: "Use $research-project-maintenance to repair or evolve the research repository without breaking the repository contract."

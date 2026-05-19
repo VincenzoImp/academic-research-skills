@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citation Claim Audit"
+  short_description: "Verify that claims, numbers, citations, quotes, and evidence links are supported by project sources."
+  default_prompt: "Use $citation-claim-audit to check every important claim against sources, datasets, experiments, and bibliography records."

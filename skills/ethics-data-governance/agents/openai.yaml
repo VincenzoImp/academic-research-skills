@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ethics Data Governance"
+  short_description: "Assess privacy, human-subjects, scraping, platform, license, data-sharing, and publication risks."
+  default_prompt: "Use $ethics-data-governance to document ethical constraints, data handling rules, and sharing boundaries for the project."

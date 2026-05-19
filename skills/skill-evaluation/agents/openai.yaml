@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Evaluation"
+  short_description: "Pressure-test, audit, and refine academic research skills before publication or package changes."
+  default_prompt: "Use $skill-evaluation to review skill triggers, overlap, references, examples, and release readiness for this package."

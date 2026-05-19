@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Migration"
+  short_description: "Move messy research repos, archives, notebooks, PDFs, and outputs into the standard research project structure."
+  default_prompt: "Use $repo-migration to reorganize an existing research project while preserving provenance and avoiding silent data loss."

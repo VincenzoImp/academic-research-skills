@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source Ingestion"
+  short_description: "Register PDFs, papers, proposals, datasets, web sources, BibTeX, and metadata into the research repo."
+  default_prompt: "Use $source-ingestion to add sources with provenance, ledgers, wiki pages, and links to downstream synthesis."

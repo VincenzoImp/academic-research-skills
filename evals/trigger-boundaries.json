@@ -1,0 +1,235 @@
+{
+  "purpose": "Seed prompts for evaluating whether each academic research skill should trigger. These are static boundary fixtures, not a substitute for runtime agent trigger telemetry.",
+  "skills": [
+    {
+      "skill": "academic-mcp-tooling",
+      "should_trigger": [
+        "Choose and configure MCP servers for arXiv, OpenAlex, Semantic Scholar, Zotero, and Overleaf in this research repo.",
+        "Audit whether our scholarly search MCP setup can support citation graph and author lookup workflows."
+      ],
+      "should_not_trigger": [
+        "Summarize this already downloaded PDF without changing any MCP configuration."
+      ]
+    },
+    {
+      "skill": "adversarial-peer-review",
+      "should_trigger": [
+        "Review this draft like a severe but fair top-tier conference reviewer before submission.",
+        "Find the strongest novelty, methodology, and related-work objections reviewers could raise."
+      ],
+      "should_not_trigger": [
+        "Format the bibliography keys in this BibTeX file."
+      ]
+    },
+    {
+      "skill": "artifact-open-science",
+      "should_trigger": [
+        "Prepare the code, data, commands, and metadata for an artifact evaluation submission.",
+        "Audit this project for open science release readiness, including reproducibility and dataset card gaps."
+      ],
+      "should_not_trigger": [
+        "Brainstorm three possible research questions for a new idea."
+      ]
+    },
+    {
+      "skill": "citation-bibliography-tooling",
+      "should_trigger": [
+        "Normalize this BibTeX file, citation keys, DOI metadata, and unused references.",
+        "Check the bibliography for duplicate entries, missing identifiers, and inconsistent arXiv or DOI fields."
+      ],
+      "should_not_trigger": [
+        "Judge whether the paper's central claim is actually supported by the cited evidence."
+      ]
+    },
+    {
+      "skill": "citation-claim-audit",
+      "should_trigger": [
+        "Verify every factual claim in this related work section against the cited papers.",
+        "Audit whether these numerical results and citation statements are supported by the source PDFs."
+      ],
+      "should_not_trigger": [
+        "Convert the paper PDF to Markdown for later reading."
+      ]
+    },
+    {
+      "skill": "cs-methodology-evaluation",
+      "should_trigger": [
+        "Design a CS evaluation plan with baselines, metrics, ablations, datasets, and validity threats.",
+        "Audit whether this experiment section is convincing for a systems or ML conference."
+      ],
+      "should_not_trigger": [
+        "Pick the best conference deadline for this already finished paper."
+      ]
+    },
+    {
+      "skill": "cs-venue-strategy",
+      "should_trigger": [
+        "Compare possible CS venues for this paper and explain fit, reviewer expectations, and artifact requirements.",
+        "Help position this contribution for a conference track with the right deadline and framing."
+      ],
+      "should_not_trigger": [
+        "Run the benchmark script and save the experiment log."
+      ]
+    },
+    {
+      "skill": "document-conversion",
+      "should_trigger": [
+        "Convert these PDFs and DOCX proposal files into Markdown with table and figure extraction notes.",
+        "Extract text, tables, and assets from scanned papers and report conversion quality."
+      ],
+      "should_not_trigger": [
+        "Decide which arXiv papers should be included in the SOTA review."
+      ]
+    },
+    {
+      "skill": "ethics-data-governance",
+      "should_trigger": [
+        "Assess privacy, consent, scraping, license, and retention risks for this research dataset.",
+        "Document IRB, sensitive content, public web data, and sharing constraints before release."
+      ],
+      "should_not_trigger": [
+        "Polish the abstract for a stronger submission narrative."
+      ]
+    },
+    {
+      "skill": "experiment-logbook",
+      "should_trigger": [
+        "Plan and record an ablation run with config, command, seed, metric, and outcome notes.",
+        "Compare these overnight training runs and update the experiment logbook."
+      ],
+      "should_not_trigger": [
+        "Move a messy downloaded source archive into the repo structure."
+      ]
+    },
+    {
+      "skill": "paper-writing-review",
+      "should_trigger": [
+        "Revise this manuscript introduction, methods, limitations, and related work for academic submission quality.",
+        "Draft a clear paper section without inventing citations or overstating evidence."
+      ],
+      "should_not_trigger": [
+        "Install MCP servers for Semantic Scholar and OpenAlex."
+      ]
+    },
+    {
+      "skill": "rebuttal-revision-strategy",
+      "should_trigger": [
+        "Map reviewer comments into concede, defend, reframe, and revise actions for a rebuttal.",
+        "Write a precise response plan and camera-ready revision checklist from these reviews."
+      ],
+      "should_not_trigger": [
+        "Create an initial SOTA matrix from a folder of PDFs."
+      ]
+    },
+    {
+      "skill": "repo-migration",
+      "should_trigger": [
+        "Migrate this messy academic repo, proposal PDFs, notebooks, and archives into the standard research structure.",
+        "Unpack downloaded archives and reorganize them into sources, experiments, papers, and docs without losing provenance."
+      ],
+      "should_not_trigger": [
+        "Choose statistical tests for a cleaned results table."
+      ]
+    },
+    {
+      "skill": "research-data-analysis",
+      "should_trigger": [
+        "Clean this tabular dataset, run the analysis, and produce publication-ready figures and result tables.",
+        "Move notebook analysis into reproducible code and document the statistical choices."
+      ],
+      "should_not_trigger": [
+        "Review the manuscript as an adversarial peer reviewer."
+      ]
+    },
+    {
+      "skill": "research-design-positioning",
+      "should_trigger": [
+        "Turn this rough research idea into questions, hypotheses, contribution claims, and evidence requirements.",
+        "Identify the novelty gap, scope boundaries, and publishable positioning before we start experiments."
+      ],
+      "should_not_trigger": [
+        "Normalize the BibTeX citation keys."
+      ]
+    },
+    {
+      "skill": "research-project-maintenance",
+      "should_trigger": [
+        "Audit and repair the research repo structure, wiki, logs, sources, outputs, and reproducibility docs.",
+        "Keep the project documentation, capability profile, and research records coherent after recent changes."
+      ],
+      "should_not_trigger": [
+        "Write a detailed rebuttal to reviewer 2."
+      ]
+    },
+    {
+      "skill": "research-project-router",
+      "should_trigger": [
+        "This academic repo task spans sources, SOTA, citation audit, experiments, and paper writing; choose the right workflow.",
+        "I am not sure which research skill applies to this project maintenance and literature review request."
+      ],
+      "should_not_trigger": [
+        "Use the source-ingestion skill to register this one PDF."
+      ]
+    },
+    {
+      "skill": "research-repo-reproduction",
+      "should_trigger": [
+        "Inspect this external paper code repository and reproduce the documented evaluation or inference command.",
+        "Audit whether the README, datasets, checkpoints, and scripts support the paper's reproducibility claims."
+      ],
+      "should_not_trigger": [
+        "Design a new research question for our own project."
+      ]
+    },
+    {
+      "skill": "research-ui-prototyping",
+      "should_trigger": [
+        "Build a research dashboard for experiment metrics, source review, or annotation workflows.",
+        "Prototype a data browser that supports the paper's analysis and lets users inspect evidence."
+      ],
+      "should_not_trigger": [
+        "Convert a scanned PDF into Markdown."
+      ]
+    },
+    {
+      "skill": "skill-evaluation",
+      "should_trigger": [
+        "Pressure-test this academic research skill package before publishing it.",
+        "Review whether these skills have good trigger descriptions, references, install behavior, and validation."
+      ],
+      "should_not_trigger": [
+        "Run an ablation experiment and log the result."
+      ]
+    },
+    {
+      "skill": "sota-literature-review",
+      "should_trigger": [
+        "Build a SOTA matrix from these papers and synthesize gaps, trends, and related-work claims.",
+        "Compare the literature around this topic and identify what is novel enough for a contribution."
+      ],
+      "should_not_trigger": [
+        "Prepare artifact evaluation packaging for an accepted paper."
+      ]
+    },
+    {
+      "skill": "source-ingestion",
+      "should_trigger": [
+        "Add these PDFs, arXiv links, Zotero items, and proposal files to the research source ledger.",
+        "Register a new source with provenance, metadata, Markdown notes, and wiki links."
+      ],
+      "should_not_trigger": [
+        "Choose between two conference venues."
+      ]
+    },
+    {
+      "skill": "systematic-review-prisma",
+      "should_trigger": [
+        "Plan and document a PRISMA-style systematic review with inclusion criteria and screening decisions.",
+        "Run a reproducible search strategy and create flow counts for included and excluded papers."
+      ],
+      "should_not_trigger": [
+        "Do a quick informal related-work summary without systematic screening."
+      ]
+    }
+  ]
+}

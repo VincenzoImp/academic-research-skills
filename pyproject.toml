@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "academic-research-skills"
+version = "0.1.0"
+description = "Agent skills for academic research repositories."
+requires-python = ">=3.11"
+license = "MIT"
+readme = "README.md"
+keywords = ["agent-skills", "academic-research", "literature-review", "sota", "mcp"]
+authors = [{ name = "Vincenzo Imperati" }]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.8"]
+
+[project.urls]
+Homepage = "https://github.com/VincenzoImp/academic-research-skills"
+Repository = "https://github.com/VincenzoImp/academic-research-skills"
+Skills = "https://skills.sh/VincenzoImp/academic-research-skills"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools]
+py-modules = []

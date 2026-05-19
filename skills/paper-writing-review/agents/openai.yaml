@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Writing Review"
+  short_description: "Draft, revise, structure, and polish manuscripts, proposals, related work, abstracts, and scholarly sections."
+  default_prompt: "Use $paper-writing-review to write or revise academic text from project evidence without inventing claims or citations."

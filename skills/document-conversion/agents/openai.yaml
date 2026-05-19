@@ -1,0 +1,4 @@
+interface:
+  display_name: "Document Conversion"
+  short_description: "Convert PDFs, DOCX, scans, tables, and figures into Markdown or assets with provenance and quality notes."
+  default_prompt: "Use $document-conversion to produce derived reading copies while preserving native files and recording conversion quality."
