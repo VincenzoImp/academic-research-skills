@@ -29,6 +29,7 @@ Use this contract when a skill needs to write or locate project artifacts.
 - `docs/reproducibility/`: commands, environments, artifact policies, and result reproduction notes.
 - `docs/ethics/data-governance.md`: privacy, consent, sensitivity, terms, licensing, retention, and sharing notes.
 - `experiments/`: human-curated experiment records, registries, and plans.
+- `scripts/`: thin repeatable command entrypoints that call reusable code in `src/`.
 - `notebooks/`: optional exploratory and narrative notebooks; reusable logic belongs in `src/`.
 - `repro_outputs/`: trusted reproduction evidence for external repos or papers.
 - `train_outputs/`: training run evidence when the research includes model training.
@@ -50,7 +51,13 @@ Use this contract when a skill needs to write or locate project artifacts.
 - `wiki/synthesis.md`: current high-level synthesis.
 - `wiki/contradictions.md`: unresolved conflicts across sources, data, or runs.
 - `wiki/open_questions.md`: unresolved research questions.
-- `wiki/templates/`: reusable page structures for sources, claims, decisions, reviews, bibliography, and research questions.
+- `wiki/templates/`: reusable page structures for sources, claims, experiments, decisions, reviewer concerns, and research questions.
+- `wiki/templates/source-page.md`: source summary and evidence record.
+- `wiki/templates/claim-page.md`: claim support and safe wording record.
+- `wiki/templates/experiment-page.md`: experiment interpretation page linked to the registry.
+- `wiki/templates/decision-record.md`: durable research or engineering decision record.
+- `wiki/templates/reviewer-concern.md`: review concern and response plan.
+- `wiki/templates/research-question.md`: question scope, contribution link, and evidence plan.
 
 ## Optional Agent Stack Contract
 
@@ -72,6 +79,7 @@ otherwise be weak.
 ## Write Rules
 
 - Never silently rewrite raw sources.
+- Keep scripts thin; move reusable scientific logic to `src/`.
 - Prefer adding a new derived artifact to editing an old derived artifact without explanation.
 - Every generated artifact should name its input sources or command.
 - Claims must point to a source, dataset, experiment, or decision record.

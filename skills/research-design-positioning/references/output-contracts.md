@@ -25,11 +25,12 @@ Use these contracts to avoid ambiguous "done" states.
 
 - `docs/methodology/research-design.md`: questions, contribution, scope, evidence plan.
 - `wiki/open_questions.md` or `wiki/questions/<question_id>.md` updated.
+- `wiki/templates/research-question.md` used when creating durable question pages.
 
 ## Ideation And Positioning
 
 - `docs/methodology/research-design.md`: contribution claims and failure conditions.
-- `wiki/templates/contribution-claim-page.md` derived pages when reusable.
+- `wiki/templates/claim-page.md` used when contribution claims become reusable wiki pages.
 - `sota/gaps.md` updated when the idea changes the gap map.
 
 ## Venue Strategy
@@ -63,6 +64,7 @@ Use these contracts to avoid ambiguous "done" states.
 ## Claim Audit
 
 - `analysis_outputs/claim-audit.md`: claim-by-claim results.
+- `wiki/templates/claim-page.md` used for durable claim records.
 - `sources/bib/citation-audit.csv`: citation-level issues when bibliography is involved.
 - Manuscript or wiki pages updated only after the audit verdict is clear.
 
@@ -83,6 +85,7 @@ Use these contracts to avoid ambiguous "done" states.
 ## Peer Review
 
 - `reports/reviews/<review_id>.md`
+- `wiki/templates/reviewer-concern.md` used for reusable acceptance-critical concerns.
 - reviewer concerns linked to claims, methods, venue strategy, or rebuttal plan.
 
 ## Rebuttal And Revision
@@ -112,5 +115,6 @@ Use these contracts to avoid ambiguous "done" states.
 
 - `experiments/registry.csv` updated.
 - `experiments/<run_id>.md` created for human-readable context.
+- `wiki/templates/experiment-page.md` used when a run changes project knowledge or claims.
 - Machine logs stay in `train_outputs/`, `explore_outputs/`, or `debug_outputs/`; curated exports move to `outputs/`.
 - Trusted, exploratory, and failed runs are clearly separated.
