@@ -1,14 +1,24 @@
 # Academic Research Skills
 
 [![skills.sh](https://skills.sh/b/VincenzoImp/academic-research-skills)](https://skills.sh/VincenzoImp/academic-research-skills)
+[![Validate Skills](https://github.com/VincenzoImp/academic-research-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/VincenzoImp/academic-research-skills/actions/workflows/validate.yml)
+[![Release Skills](https://github.com/VincenzoImp/academic-research-skills/actions/workflows/release.yml/badge.svg)](https://github.com/VincenzoImp/academic-research-skills/actions/workflows/release.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Professional agent skill package for academic research repositories, especially
-projects created by `create-academic-research`. The package is broadly useful
-for academic research work and gives first-class support to computer science
-research across AI/ML, systems, HCI, security, software engineering, databases,
-theory, robotics, IR, PL, graphics, and adjacent interdisciplinary CS. It is
-designed to be installed through the open skills ecosystem and to work across
+Professional agent skill package for academic research: literature review,
+source ingestion, citation hygiene, claim auditing, paper writing, peer review,
+rebuttal strategy, reproducibility, MCP tooling, and project maintenance.
+
+The skills are broadly useful for academic work and give first-class support to
+computer science research across AI/ML, systems, HCI, security, software
+engineering, databases, theory, robotics, IR, PL, graphics, and adjacent
+interdisciplinary CS. They are designed for the open skills ecosystem and for
 Agent Skills compatible LLM coding agents.
+
+The package works standalone, but it is strongest inside repositories created
+by [`create-academic-research`](https://github.com/VincenzoImp/create-academic-research),
+where the skills can rely on source ledgers, SOTA files, experiment records,
+MCP setup docs, and a durable wiki/log structure.
 
 The package is intentionally modular. It does not try to be one giant
 "research agent"; it gives agents separate procedures for literature search,
@@ -24,6 +34,18 @@ Research-specific external skills are treated as references or explicit
 project-local opt-ins, not default companions. The default stack should not
 install competing academic-paper, literature-review, citation, or peer-review
 policies beside this package; those concepts are consolidated here.
+
+## What It Covers
+
+| Research Area | Skills |
+|---|---|
+| Project Routing | `research-project-router`, `research-project-maintenance`, `repo-migration` |
+| Literature And Sources | `source-ingestion`, `document-conversion`, `sota-literature-review`, `systematic-review-prisma` |
+| Citations And Evidence | `citation-bibliography-tooling`, `citation-claim-audit`, `academic-mcp-tooling` |
+| Research Design | `research-design-positioning`, `cs-methodology-evaluation`, `ethics-data-governance` |
+| Writing And Review | `paper-writing-review`, `adversarial-peer-review`, `rebuttal-revision-strategy`, `cs-venue-strategy` |
+| Artifacts And Execution | `experiment-logbook`, `research-data-analysis`, `research-repo-reproduction`, `artifact-open-science`, `research-ui-prototyping` |
+| Skill Quality | `skill-evaluation` |
 
 ## Skills
 
@@ -108,7 +130,7 @@ state belongs in the research repository, especially `AGENTS.md`, `docs/agent/`,
 ## Validate
 
 ```bash
-python3.11 scripts/check_release.py v0.1.5
+python3.11 scripts/check_release.py v0.1.6
 python3.11 scripts/validate_skills.py
 bash scripts/spec_validate_skills.sh
 python3.11 -m pytest -q
@@ -134,8 +156,8 @@ Releases are tag-driven. Update `pyproject.toml`, commit the change, create
 `vX.Y.Z`, and push the tag:
 
 ```bash
-git tag -a v0.1.5 -m "v0.1.5"
-git push origin main v0.1.5
+git tag -a v0.1.6 -m "v0.1.6"
+git push origin main v0.1.6
 ```
 
 Once the GitHub repository is public, the release workflow validates the tag

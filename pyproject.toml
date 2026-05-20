@@ -4,12 +4,24 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "academic-research-skills"
-version = "0.1.5"
-description = "Agent skills for academic research repositories."
+version = "0.1.6"
+description = "Agent skills for literature review, citation audit, paper writing, peer review, reproducibility, and academic research project maintenance."
 requires-python = ">=3.11"
 license = "MIT"
 readme = "README.md"
-keywords = ["agent-skills", "academic-research", "literature-review", "sota", "mcp"]
+keywords = [
+  "academic-research",
+  "agent-skills",
+  "citation-audit",
+  "literature-review",
+  "llm-agents",
+  "mcp",
+  "open-science",
+  "paper-writing",
+  "peer-review",
+  "reproducibility",
+  "sota",
+]
 authors = [{ name = "Vincenzo Imperati" }]
 
 [project.optional-dependencies]
