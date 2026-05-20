@@ -1,7 +1,7 @@
 # Ethics Data Governance
 
 Use this reference for research involving people, public web traces, sensitive
-data, platform content, illicit markets, or restricted sources.
+data, platform content, sensitive-domain material, or restricted sources.
 
 ## Governance Record
 
@@ -23,7 +23,7 @@ Maintain `docs/ethics/data-governance.md` with:
 - `public-contextual-risk`
 - `personal-data`
 - `sensitive-personal-data`
-- `illicit-or-harmful-content`
+- `restricted-or-harmful-content`
 - `proprietary-or-licensed`
 - `dual-use`
 

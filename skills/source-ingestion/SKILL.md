@@ -35,7 +35,7 @@ Prefer stable slugs:
 - `smith-2024-topic`
 - `arxiv-2401-12345`
 - `doi-10-1145-short-topic`
-- `proposal-telegram-marketplace-2026`
+- `proposal-short-topic-2026`
 
 ## Conversion Handoff
 

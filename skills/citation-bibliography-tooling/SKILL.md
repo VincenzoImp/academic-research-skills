@@ -35,7 +35,7 @@ metadata is not evidence by itself, but it is the backbone for traceability.
 
 Prefer stable, readable keys:
 
-- `smith2024platform`
+- `smith2024topic`
 - `arxiv240112345`
 - `doi10-1145-short-topic`
 

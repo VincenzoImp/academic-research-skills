@@ -1,6 +1,6 @@
 ---
 name: ethics-data-governance
-description: Use when academic research involves human subjects, public web data, platform scraping, illicit markets, sensitive content, privacy risk, dataset sharing, consent, IRB, licenses, or data retention.
+description: Use when academic research involves human subjects, public web data, platform scraping, sensitive domains, privacy risk, dataset sharing, consent, IRB, licenses, or data retention.
 license: MIT
 ---
 
@@ -8,7 +8,7 @@ license: MIT
 
 Handle ethics and data governance as part of the research record, not as a late
 appendix. This is especially important for platform, community, security, health,
-education, and illicit-market research.
+education, and other sensitive-domain research.
 
 ## Read First
 
