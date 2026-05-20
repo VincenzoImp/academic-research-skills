@@ -12,6 +12,7 @@ external reviewers do.
 
 ## Read First
 
+- `references/repository-contract.md`
 - `references/peer-review-policy.md`
 - `references/claim-audit.md`
 - `references/cs-methodology-evaluation-policy.md`

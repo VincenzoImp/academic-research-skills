@@ -54,12 +54,17 @@ capability state.
 - Use `academic-research mcp env <server>` before enabling optional servers so
   required/recommended env vars, hosted endpoints, local prerequisites, and
   setup commands are visible without opening generated files.
+- Use `academic-research mcp env --dotenv --all` to regenerate the committed
+  `.env.example` reference. Filled secrets belong in `.env.local`, the shell,
+  or the MCP client secret store, not in git.
 - Use Google Scholar only as fallback discovery unless the user explicitly asks.
 - For Zotero, prefer local-library tools that can access attachments and collections.
 - For Overleaf, require clear token/project setup and default to read-only flows.
 - Do not write literal placeholder secrets into generated MCP config. Record
   required env vars in `docs/agent/mcp-setup.md` and let the client environment
   or secret store provide them.
+- Keep `.env.example` empty of real secrets and treat it as documentation, not
+  runtime configuration. Do not assume agents automatically load `.env.local`.
 - Disable Sci-Hub, questionable download, or browser-session features unless the
   user explicitly accepts the legal and institutional risk.
 - Prefer MCP servers for live scholarly access and keep research-specific

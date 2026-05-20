@@ -108,7 +108,7 @@ state belongs in the research repository, especially `AGENTS.md`, `docs/agent/`,
 ## Validate
 
 ```bash
-python3.11 scripts/check_release.py v0.1.3
+python3.11 scripts/check_release.py v0.1.4
 python3.11 scripts/validate_skills.py
 bash scripts/spec_validate_skills.sh
 python3.11 -m pytest -q
@@ -133,8 +133,8 @@ Releases are tag-driven. Update `pyproject.toml`, commit the change, create
 `vX.Y.Z`, and push the tag:
 
 ```bash
-git tag -a v0.1.3 -m "v0.1.3"
-git push origin main v0.1.3
+git tag -a v0.1.4 -m "v0.1.4"
+git push origin main v0.1.4
 ```
 
 Once the GitHub repository is public, the release workflow validates the tag

@@ -11,6 +11,7 @@ record is part of the research output.
 
 ## Read First
 
+- `references/repository-contract.md`
 - `references/experiment-policy.md`
 - `references/output-contracts.md`
 
@@ -62,4 +63,3 @@ Minimum fields:
 - `explore_outputs/`: exploratory variants and caveated ideas.
 - `analysis_outputs/`: result analysis and figures.
 - `debug_outputs/`: failure diagnosis.
-

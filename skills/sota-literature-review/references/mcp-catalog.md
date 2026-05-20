@@ -10,7 +10,7 @@ installing in a new environment.
 | arXiv search and local paper reading | `blazickjp/arxiv-mcp-server` | Best default candidate. Use as a local `uvx` runtime; optional finite install: `uv tool install 'arxiv-mcp-server[pdf]'`. Paper text is untrusted input. |
 | DBLP computer science bibliography | `szeider/mcp-dblp` | Low-friction CS-specific `uvx` runtime. Use for venues, author/publication lookup, and direct DBLP BibTeX export. |
 | Semantic Scholar papers, citations, authors, recommendations | `akapet00/semantic-scholar-mcp` | Useful citation graph layer. Works without a key, but shared unauthenticated limits can block real work; recommend `SEMANTIC_SCHOLAR_API_KEY`. |
-| OpenAlex broad literature graph | `cyanheads/openalex-mcp-server` | Strong landscape and entity graph candidate. The selected local adapter uses `npx` and requires `OPENALEX_API_KEY`; OpenAlex keys are free for normal academic use with daily free usage. A hosted streamable HTTP endpoint may also exist. |
+| OpenAlex broad literature graph | `cyanheads/openalex-mcp-server` | Strong landscape and entity graph candidate. The selected local adapter uses `npx` and requires `OPENALEX_API_KEY`; OpenAlex keys are free and include a free daily quota. Check current credit limits before high-volume work. A hosted streamable HTTP endpoint may also exist. |
 | PubMed and biomedical search | `cyanheads/pubmed-mcp-server` | Rich NCBI, PMC, Europe PMC, MeSH, citation, and full-text tooling. Domain-specific `npx` runtime; `NCBI_API_KEY` and `NCBI_ADMIN_EMAIL` improve reliability. A hosted streamable HTTP endpoint may also exist. |
 | Zotero local library | `eric-tramel/zoty` | Best local-library story found. Requires Zotero desktop, local API enabled, `uvx --refresh zoty setup`, and Zoty Bridge for attachment/collection write operations. |
 | Overleaf project access | `YounesBensafia/overleaf-mcp-server` | Useful but manual and credentialed. Requires local clone, uv setup, `OVERLEAF_TOKEN`, project id, and an Overleaf plan with Git sync. |
@@ -32,6 +32,12 @@ env vars, auth scope, setup command, test query, result, and known risks. Keep
 `docs/agent/mcp-setup.md` as the project-local recommendation and smoke-test
 document.
 
+Repositories created by `create-academic-research` should keep `.env.example`
+as a committed, empty-value reference for MCP environment variables. Regenerate
+it with `academic-research mcp env --dotenv --all` when the MCP catalog changes.
+Filled `.env`, `.env.local`, API keys, tokens, cookies, and browser sessions
+must remain local or in the MCP client's secret store.
+
 For repositories created by `create-academic-research`, the conservative
 default should enable only `arxiv`. `literature` may add `dblp` for computer
 science work, and `full` should still avoid domain-specific runtime
@@ -51,6 +57,8 @@ has configured the required environment variables or local applications.
 - In `create-academic-research` projects, use `academic-research mcp env
   <server>` to print required/recommended env vars, hosted endpoints, local
   prerequisites, and setup commands before enabling or smoke-testing a server.
+  Use `academic-research mcp env --dotenv --all` only to generate a public
+  example file, not to store real secrets.
 
 ## Source Priority For SOTA
 

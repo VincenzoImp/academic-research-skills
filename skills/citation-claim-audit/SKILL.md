@@ -10,6 +10,7 @@ Audit claims before they become paper text, README claims, or wiki synthesis.
 
 ## Read First
 
+- `references/repository-contract.md`
 - `references/claim-audit.md`
 - `references/output-contracts.md`
 

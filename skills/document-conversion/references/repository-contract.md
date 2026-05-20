@@ -21,6 +21,8 @@ Use this contract when a skill needs to write or locate project artifacts.
 - `configs/capabilities.yaml`: optional project-local active skill/MCP state, usually written by `create-academic-research`.
 - `docs/agent/capability-profile.md`: active skill/MCP capability profile when available.
 - `docs/agent/generated/`: non-secret generated MCP config snippets.
+- `.env.example`: committed empty-value reference for optional local/API
+  environment variables. Filled `.env` or `.env.local` files must stay out of git.
 - `docs/venue/`: venue targeting, review expectations, deadlines, and paper fit.
 - `docs/methodology/`: stable method documentation for humans.
 - `docs/methodology/research-design.md`: research questions, hypotheses, scope, contribution, and evidence plan.

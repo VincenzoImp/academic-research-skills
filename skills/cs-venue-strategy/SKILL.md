@@ -11,6 +11,7 @@ choose a realistic target and adapt the paper's evidence, tone, and framing.
 
 ## Read First
 
+- `references/repository-contract.md`
 - `references/venue-strategy-policy.md`
 - `references/research-positioning-policy.md`
 

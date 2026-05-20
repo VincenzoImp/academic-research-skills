@@ -11,6 +11,7 @@ respond precisely, respectfully, and strategically without overstating evidence.
 
 ## Read First
 
+- `references/repository-contract.md`
 - `references/peer-review-policy.md`
 - `references/research-positioning-policy.md`
 

@@ -12,6 +12,7 @@ formatting.
 
 ## Read First
 
+- `references/repository-contract.md`
 - `references/systematic-review-policy.md`
 - `references/source-ledger.md`
 - `references/mcp-catalog.md`
