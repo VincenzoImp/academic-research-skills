@@ -20,6 +20,11 @@ research-native judgment inside this repo; generic tooling such as PDF engines,
 frontend design, Office formats, MCP servers, and general coding workflows
 remain external dependencies.
 
+Research-specific external skills are treated as references or explicit
+project-local opt-ins, not default companions. The default stack should not
+install competing academic-paper, literature-review, citation, or peer-review
+policies beside this package; those concepts are consolidated here.
+
 ## Skills
 
 - `research-project-router`: choose the right workflow and preserve project state.
@@ -103,7 +108,7 @@ state belongs in the research repository, especially `AGENTS.md`, `docs/agent/`,
 ## Validate
 
 ```bash
-python3.11 scripts/check_release.py v0.1.1
+python3.11 scripts/check_release.py v0.1.2
 python3.11 scripts/validate_skills.py
 bash scripts/spec_validate_skills.sh
 python3.11 -m pytest -q
@@ -128,8 +133,8 @@ Releases are tag-driven. Update `pyproject.toml`, commit the change, create
 `vX.Y.Z`, and push the tag:
 
 ```bash
-git tag -a v0.1.1 -m "v0.1.1"
-git push origin main v0.1.1
+git tag -a v0.1.2 -m "v0.1.2"
+git push origin main v0.1.2
 ```
 
 Once the GitHub repository is public, the release workflow validates the tag
@@ -148,3 +153,10 @@ In those projects, skills should treat `configs/capabilities.yaml`,
 structure, skills should inspect the target repository, use the closest
 available durable records, and propose creating missing folders only when the
 task needs them.
+
+The package intentionally uses a moderate number of skills. Separate skills
+mark real workflow boundaries: source ingestion, SOTA, systematic review,
+bibliography, claim audit, methodology, writing, peer review, rebuttal,
+reproduction, experiments, data analysis, ethics, MCP tooling, and maintenance.
+Do not split these further unless a workflow needs different triggers, different
+artifacts, or different safety rules.

@@ -30,10 +30,12 @@ capability state.
 3. Choose the smallest set of MCP servers that covers the project need.
 4. If `academic-research` is available, inspect the current project state first:
    `academic-research doctor`.
-5. Document install commands, env vars, auth scopes, rate limits, risks, and
-   workflows in `docs/agent/mcp-setup.md`.
+5. Document execution mode, finite install commands, hosted endpoints, setup
+   commands, env vars, auth scopes, rate limits, risks, and workflows in
+   `docs/agent/mcp-setup.md`.
 6. Update `docs/agent/capability-profile.md` when active capability changes.
-7. Mark each server as generated-config, manual-setup, optional, or fallback.
+7. Mark each server as default, low-friction, credentialed, local-service,
+   manual-setup, domain-specific, or fallback.
 8. Smoke-test each configured server with one harmless query.
 9. Save useful results to `sources/metadata/` or `sota/literature-matrix.csv`.
 10. Record external IDs, query dates, and deduplication decisions.
@@ -45,18 +47,35 @@ capability state.
   evidence layer.
 - Prefer arXiv/OpenAlex/Semantic Scholar/Crossref/PubMed metadata over general
   web search.
+- In `create-academic-research` projects, keep `arxiv` as the default enabled
+  MCP. Add `dblp` for computer science bibliography work, `pubmed` for
+  biomedical work, and credentialed/local-service integrations only after their
+  prerequisites are configured.
+- Use `academic-research mcp env <server>` before enabling optional servers so
+  required/recommended env vars, hosted endpoints, local prerequisites, and
+  setup commands are visible without opening generated files.
 - Use Google Scholar only as fallback discovery unless the user explicitly asks.
 - For Zotero, prefer local-library tools that can access attachments and collections.
 - For Overleaf, require clear token/project setup and default to read-only flows.
+- Do not write literal placeholder secrets into generated MCP config. Record
+  required env vars in `docs/agent/mcp-setup.md` and let the client environment
+  or secret store provide them.
 - Disable Sci-Hub, questionable download, or browser-session features unless the
   user explicitly accepts the legal and institutional risk.
+- Prefer MCP servers for live scholarly access and keep research-specific
+  external skills as optional fallbacks. The project-native research workflow
+  should remain in this package.
+- Treat Exa/BGPT-style search services as useful optional retrieval layers when
+  the user has credentials, but record pricing, coverage, and provenance limits.
 
 ## Smoke-Test Record
 
 For each configured server, record:
 
 - server name and install command
+- execution mode and hosted endpoint when available
 - client config location
+- setup command when required
 - required environment variables
 - query
 - timestamp
@@ -71,3 +90,5 @@ For each configured server, record:
 - Do not rely on one database for final SOTA coverage unless the scope says so.
 - Treat scraped results as discovery leads, not proof.
 - Update `sources/source-ledger.csv` only when a source becomes evidence.
+- Save raw metadata or query outputs before synthesis when they influence a
+  literature matrix, citation decision, or claim audit.

@@ -39,7 +39,7 @@ goal is to route deliberately and preserve project state.
 | Assess human-subject, privacy, scraping, license, or sharing risk | `ethics-data-governance` |
 | Fix folder structure, docs, wiki, agent instructions | `research-project-maintenance` |
 | Onboard or audit the skill/MCP capability stack | `academic-mcp-tooling` then `research-project-maintenance` |
-| Select, configure, smoke-test, and document arXiv, OpenAlex, Zotero, Overleaf, Scholar, and scholarly metadata MCP tools | `academic-mcp-tooling` |
+| Select, configure, smoke-test, and document arXiv, DBLP, PubMed, Semantic Scholar, OpenAlex, Zotero, Overleaf, Crossref, Scholar, and scholarly metadata MCP tools | `academic-mcp-tooling` |
 | Review or improve the skill package itself | `skill-evaluation` |
 
 ## Default Procedure

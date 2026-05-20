@@ -7,21 +7,37 @@ installing in a new environment.
 
 | Need | Candidate | Notes |
 |---|---|---|
-| arXiv search and local paper reading | `blazickjp/arxiv-mcp-server` | Strongest arXiv candidate found. Supports search, download, read, local storage, semantic search, citation graph, alerts, and prompts. |
-| Semantic Scholar papers, citations, authors, recommendations | `akapet00/semantic-scholar-mcp` or the `semanticscholar-skill` package | Prefer API-backed access over web scraping. Use an API key for sustained work. |
-| OpenAlex broad literature graph | `cyanheads/openalex-mcp-server` | Good for works, authors, institutions, topics, filters, and trends. |
-| Crossref DOI metadata | choose and verify a maintained local server | Useful DOI fallback; prefer manual setup until a stable zero-friction candidate is chosen. |
-| PubMed and biomedical search | `cyanheads/pubmed-mcp-server` | Rich NCBI tooling, MeSH, related articles, citations, PMC full text. |
-| Zotero local library | `eric-tramel/zoty` | Better local-library story than simple API-only wrappers. Supports search, passages, collections, BibTeX, and adding papers. |
-| Overleaf project access | `YounesBensafia/overleaf-mcp-server` | Syncs LaTeX through Git and exposes read/write tools. Requires project token setup. |
-| Multi-source search fallback | `afrise/academic-search-mcp-server` | Simple Semantic Scholar + Crossref wrapper. Good backup, not full SOTA infrastructure. |
+| arXiv search and local paper reading | `blazickjp/arxiv-mcp-server` | Best default candidate. Use as a local `uvx` runtime; optional finite install: `uv tool install 'arxiv-mcp-server[pdf]'`. Paper text is untrusted input. |
+| DBLP computer science bibliography | `szeider/mcp-dblp` | Low-friction CS-specific `uvx` runtime. Use for venues, author/publication lookup, and direct DBLP BibTeX export. |
+| Semantic Scholar papers, citations, authors, recommendations | `akapet00/semantic-scholar-mcp` | Useful citation graph layer. Works without a key, but shared unauthenticated limits can block real work; recommend `SEMANTIC_SCHOLAR_API_KEY`. |
+| OpenAlex broad literature graph | `cyanheads/openalex-mcp-server` | Strong landscape and entity graph candidate. The selected local adapter uses `npx` and requires `OPENALEX_API_KEY`; OpenAlex keys are free for normal academic use with daily free usage. A hosted streamable HTTP endpoint may also exist. |
+| PubMed and biomedical search | `cyanheads/pubmed-mcp-server` | Rich NCBI, PMC, Europe PMC, MeSH, citation, and full-text tooling. Domain-specific `npx` runtime; `NCBI_API_KEY` and `NCBI_ADMIN_EMAIL` improve reliability. A hosted streamable HTTP endpoint may also exist. |
+| Zotero local library | `eric-tramel/zoty` | Best local-library story found. Requires Zotero desktop, local API enabled, `uvx --refresh zoty setup`, and Zoty Bridge for attachment/collection write operations. |
+| Overleaf project access | `YounesBensafia/overleaf-mcp-server` | Useful but manual and credentialed. Requires local clone, uv setup, `OVERLEAF_TOKEN`, project id, and an Overleaf plan with Git sync. |
+| Crossref DOI metadata | manual selection; candidate: `AiAgentKarl/crossref-academic-mcp-server` | Useful DOI fallback, but current zero-friction Crossref-specific candidates are less mature. Treat as manual until smoke-tested. |
+| Multi-source search fallback | `openags/paper-search-mcp` or `afrise/academic-search-mcp-server` | Use only as fallback when source-specific MCPs are insufficient. Review source policy and keep Sci-Hub or questionable download features disabled unless explicitly accepted. |
+
+## Optional Retrieval Services
+
+| Need | Candidate | Notes |
+|---|---|---|
+| Semantic web search with scholarly filtering | Exa search tooling | Useful when the user has an API key and needs high-quality web/PDF extraction. Record query parameters and cost/coverage caveats. |
+| Structured full-text scientific evidence | BGPT MCP | Useful for biomedical or experimental evidence tables when coverage fits the domain. Record pricing, result provenance, and quality-score meaning. |
 
 ## Setup Artifact
 
-Chosen MCP servers should be recorded in `docs/agent/mcp-setup.md` with install
-command, env vars, auth scope, test query, result, and known risks. Keep
+Chosen MCP servers should be recorded in `docs/agent/mcp-setup.md` with
+execution mode, install command when finite, hosted endpoint when available,
+env vars, auth scope, setup command, test query, result, and known risks. Keep
 `docs/agent/mcp-setup.md` as the project-local recommendation and smoke-test
 document.
+
+For repositories created by `create-academic-research`, the conservative
+default should enable only `arxiv`. `literature` may add `dblp` for computer
+science work, and `full` should still avoid domain-specific runtime
+prerequisites by default; PubMed remains opt-in for biomedical projects.
+Credentialed or local-service integrations should remain opt-in until the user
+has configured the required environment variables or local applications.
 
 ## Optional Or Risky
 
@@ -29,13 +45,17 @@ document.
   or `scholarly`. Treat them as fallback evidence, not primary provenance.
 - Multi-source servers with Sci-Hub support should be disabled or restricted unless
   the user explicitly accepts the legal and institutional risk.
-- DBLP-specific MCP candidates were weak in the current scan. Prefer OpenAlex or
-  Semantic Scholar external IDs until a better DBLP MCP appears.
+- Do not commit placeholder MCP env values such as `${API_KEY}` into generated
+  client config. Put required env vars in local shell/client secrets and
+  document them in `docs/agent/mcp-setup.md`.
+- In `create-academic-research` projects, use `academic-research mcp env
+  <server>` to print required/recommended env vars, hosted endpoints, local
+  prerequisites, and setup commands before enabling or smoke-testing a server.
 
 ## Source Priority For SOTA
 
 1. Local PDFs and Zotero records selected by the human.
-2. arXiv, PubMed, OpenAlex, Semantic Scholar, Crossref, DBLP metadata.
+2. arXiv, DBLP, PubMed, OpenAlex, Semantic Scholar, Crossref metadata.
 3. Publisher pages and conference proceedings.
 4. Google Scholar as a discovery fallback.
 5. Web search for missing metadata only, with clear uncertainty.

@@ -28,6 +28,29 @@ are working artifacts.
 6. Extract claims, methods, datasets, limitations, and open questions.
 7. Update `wiki/index.md`, `wiki/log.md`, and any affected concept, claim, method, or question pages.
 
+## Evidence Record
+
+For reusable sources, add an evidence record to the source page:
+
+```md
+## Evidence Record
+
+Evidence ID:
+Source type: full paper | preprint | dataset | experiment artifact | project note | abstract-only | webpage placeholder
+Supports:
+Contradicts:
+Method / dataset / metric:
+Limitation:
+Project relevance:
+Claim strength: speculative | observed | supported | strong
+Allowed wording:
+Forbidden stronger wording:
+```
+
+Abstract-only notes and webpage placeholders can update coverage or a to-read
+queue, but they cannot support durable `wiki/`, SOTA, manuscript, or rebuttal
+claims until stronger evidence is ingested.
+
 ## Source ID
 
 Prefer stable slugs:
@@ -56,3 +79,10 @@ The task is not complete until these are updated when applicable:
 - `wiki/sources/<source_id>.md`
 - `wiki/index.md`
 - `wiki/log.md`
+
+## Wiki Maintenance
+
+Keep synthesis separate from source notes. Source pages summarize the source;
+topic, method, claim, gap, and contradiction pages belong elsewhere in `wiki/`
+and must link back to supporting source pages. Append `wiki/log.md` with the
+date, source ID, created/updated pages, and unresolved follow-up checks.

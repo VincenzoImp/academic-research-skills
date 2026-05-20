@@ -17,28 +17,34 @@ handling, UI craft, coding discipline, or API connectors.
 
 ## Optional Connectors
 
-- `semanticscholar-skill`: API-backed Semantic Scholar search and citation traversal
-  when no MCP server is configured.
-- `openalex-database`: OpenAlex client workflows and query helpers when no MCP
-  server is configured.
-- Zotero paper reader skills when the user keeps a local Zotero library and no
-  Zotero MCP is available.
+Prefer MCP servers or project scripts for live scholarly access. Install
+research-specific external connector skills only when MCP setup is not possible
+in the user's environment:
+
+- Semantic Scholar connector skills for paper/citation traversal without an MCP server.
+- OpenAlex connector skills for graph queries without an MCP server.
+- Zotero reader skills when the user keeps a local Zotero library and no Zotero MCP is available.
 - Google Scholar skills only as fallback discovery, not primary provenance.
 
 ## Optional Mechanical Specialists
 
-- `latex-paper-en`: LaTeX compilation, formatting, figure/table checks, and
-  venue template mechanics. Do not use it as the primary research-writing policy.
-- Paper reproduction skill bundles only when reproducing external code, models,
-  and training runs. Keep our `research-repo-reproduction` skill as the project
-  governance layer.
+- LaTeX or Typst paper mechanics skills can be useful for compilation,
+  formatting, figure/table checks, and venue template mechanics. Do not use them
+  as the primary research-writing policy.
+- Paper reproduction skill bundles can be useful for external code, model, and
+  training run mechanics. Keep our `research-repo-reproduction` skill as the
+  project governance layer.
 
-## Avoid As Default With This Package
+## Do Not Install By Default With This Package
 
-- `paper-audit`, generic literature-review, generic rebuttal-writing, and generic
-  citation-management skills overlap with this package's research-native review,
-  SOTA, rebuttal, and citation workflows. Study them as references if useful, but
-  do not recommend them as default installs beside this package.
+- `paper-audit`, generic literature-review, academic-paper-writing,
+  academic-paper-review, deep-research, citation-management, and rebuttal-writing
+  skills overlap with this package's research-native review, SOTA, writing,
+  rebuttal, and citation workflows.
+- They are useful references for improving this package, but default installs
+  should not create competing research authorities inside the same project.
+- If a user explicitly wants one, install it project-locally and document why in
+  `docs/agent/capability-profile.md`.
 
 ## Suggested Install Bundle
 
@@ -71,6 +77,10 @@ Optional mechanical specialists:
 npx -y skills add bahayonghang/academic-writing-skills --skill latex-paper-en --copy -y
 npx -y skills add lllllllama/ai-paper-reproduction-skill --skill ai-research-reproduction repo-intake-and-plan env-and-assets-bootstrap minimal-run-and-audit paper-context-resolver analyze-project safe-debug run-train explore-run explore-code --copy -y
 ```
+
+These optional installs are not part of the default `create-academic-research`
+presets. Prefer installing them deliberately for a project that needs their
+mechanical scripts.
 
 ## Local Customization
 

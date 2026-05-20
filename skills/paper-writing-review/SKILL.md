@@ -27,6 +27,9 @@ Before writing, identify:
 - intended contribution
 - claims that must be preserved or avoided
 
+If any of source corpus, contribution, or claim support is missing, produce a
+writing plan or evidence-gap list before drafting durable scholarly prose.
+
 ## Writing Rules
 
 - Use `sota/`, `wiki/`, and `sources/` as evidence.
@@ -35,6 +38,10 @@ Before writing, identify:
 - Keep limitations and scope explicit.
 - Separate author claims from cited claims.
 - For related work, synthesize themes instead of listing papers mechanically.
+- Use hedging that matches evidence strength; do not upgrade "suggests" to
+  "demonstrates" without direct support.
+- Keep reviewer-facing artifacts honest: name limitations, failed runs, missing
+  baselines, and unverified claims.
 
 ## Review Modes
 
@@ -43,6 +50,23 @@ Before writing, identify:
 - `evidence`: claim support and citation alignment.
 - `style`: clarity, concision, academic tone.
 - `submission`: format, figures, tables, bibliography, reproducibility statement.
+- `latex-audit`: compile, bibliography, figure/table, label/reference, and
+  venue-format checks for existing LaTeX projects.
+- `related-work`: thematic synthesis, comparison, and gap derivation from the
+  SOTA matrix.
+
+## Manuscript Workflow
+
+1. Read target venue or artifact requirements.
+2. Load only relevant project evidence.
+3. Make a section plan with claims and required sources.
+4. Draft or revise section-by-section.
+5. Run citation/claim audit on new or changed claims.
+6. Produce unresolved evidence gaps and next checks.
+
+For existing LaTeX/Typst manuscripts, default to diagnosis and comment-style
+recommendations before source editing. Keep build fixes, bibliography changes,
+and prose rewrites separate.
 
 ## Output
 
@@ -52,3 +76,4 @@ For major revisions, produce:
 - unresolved evidence gaps
 - claim/citation audit notes
 - suggested next checks
+- changed files or sections, if edits were made

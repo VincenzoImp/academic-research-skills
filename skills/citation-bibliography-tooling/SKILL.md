@@ -31,6 +31,20 @@ metadata is not evidence by itself, but it is the backbone for traceability.
 7. For manuscripts, compare in-text citations against bibliography entries and
    claim pages.
 
+## Canonical Metadata Order
+
+Prefer metadata from:
+
+1. DOI or publisher landing page.
+2. arXiv, PubMed/PMCID, or other canonical identifier page.
+3. Crossref, OpenAlex, Semantic Scholar, DBLP, or Zotero imported from a verified
+   identifier.
+4. Google Scholar only as manual discovery/fallback, not as final metadata.
+
+For every important citation, verify title, first author, year, venue, and
+identifier. If only a search result or scraped page exists, mark the entry
+`needs-human` or `manual-verification` in the audit file.
+
 ## Citation Key Rules
 
 Prefer stable, readable keys:
@@ -41,6 +55,19 @@ Prefer stable, readable keys:
 
 Do not change citation keys in a paper without updating all references.
 
+## BibTeX Lifecycle
+
+- `validate`: every in-text key resolves, no duplicate keys, no missing required
+  fields for the entry type.
+- `dedupe`: merge preprint/published versions only when the relationship is
+  verified; preserve both when they support different claims.
+- `harvest`: add missing references only from located papers; never generate a
+  plausible BibTeX entry from memory.
+- `format`: normalize indentation, braces for protected terms, DOI/URL fields,
+  and venue names without changing scientific meaning.
+- `sync`: update `sources/source-ledger.csv` and any source or claim pages that
+  reference changed keys.
+
 ## Quality Gate
 
 Flag:
@@ -50,3 +77,4 @@ Flag:
 - source ledger row has no identifier or provenance note
 - preprint and published version are conflated
 - citation count or venue rank is used as evidence without context
+- citation metadata was verified but the cited claim was not checked
