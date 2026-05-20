@@ -227,3 +227,14 @@ def test_trigger_boundary_evals_cover_current_skills() -> None:
         assert record["should_not_trigger"]
         assert len(record["should_trigger"]) >= 2
         assert len(record["should_not_trigger"]) >= 1
+
+
+def test_skill_use_case_examples_cover_current_skills() -> None:
+    root = Path(__file__).resolve().parents[1]
+    present = {path.name for path in (root / "skills").iterdir() if path.is_dir()}
+    examples = (root / "examples" / "skill-use-cases.md").read_text(encoding="utf-8")
+
+    for skill in present:
+        assert f"`{skill}`" in examples
+    assert "Use Case" in examples
+    assert "Near Miss" in examples

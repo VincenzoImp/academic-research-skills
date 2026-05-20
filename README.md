@@ -108,7 +108,7 @@ state belongs in the research repository, especially `AGENTS.md`, `docs/agent/`,
 ## Validate
 
 ```bash
-python3.11 scripts/check_release.py v0.1.4
+python3.11 scripts/check_release.py v0.1.5
 python3.11 scripts/validate_skills.py
 bash scripts/spec_validate_skills.sh
 python3.11 -m pytest -q
@@ -124,8 +124,9 @@ checks that every installed skill keeps its local `references/` files.
 each skill directory.
 
 `evals/trigger-boundaries.json` records positive and near-miss prompts for every
-skill. It is a seed set for future trigger testing and a lightweight guard
-against description drift.
+skill. `examples/skill-use-cases.md` gives a compact human-readable boundary
+table. Together they are a seed set for future trigger testing and a lightweight
+guard against description drift.
 
 ## Release
 
@@ -133,8 +134,8 @@ Releases are tag-driven. Update `pyproject.toml`, commit the change, create
 `vX.Y.Z`, and push the tag:
 
 ```bash
-git tag -a v0.1.4 -m "v0.1.4"
-git push origin main v0.1.4
+git tag -a v0.1.5 -m "v0.1.5"
+git push origin main v0.1.5
 ```
 
 Once the GitHub repository is public, the release workflow validates the tag

@@ -54,9 +54,14 @@ capability state.
 - Use `academic-research mcp env <server>` before enabling optional servers so
   required/recommended env vars, hosted endpoints, local prerequisites, and
   setup commands are visible without opening generated files.
-- Use `academic-research mcp env --dotenv --all` to regenerate the committed
+- Use `academic-research mcp env --write .env.example --all` to regenerate the committed
   `.env.example` reference. Filled secrets belong in `.env.local`, the shell,
   or the MCP client secret store, not in git.
+- Use `academic-research mcp doctor --env-file .env.local` and
+  `academic-research mcp smoke --env-file .env.local` when the user wants the
+  CLI to read explicit local secrets for checks.
+- Use `academic-research mcp probe <server>` only after static checks pass and
+  only when intentionally starting the selected MCP server process.
 - Use Google Scholar only as fallback discovery unless the user explicitly asks.
 - For Zotero, prefer local-library tools that can access attachments and collections.
 - For Overleaf, require clear token/project setup and default to read-only flows.

@@ -173,12 +173,22 @@ def _validate_package_contract(skill_names: set[str]) -> list[str]:
                         f"{recommendations_path}: default install bundle includes overlapping skill {overlap!r}"
                     )
 
+    examples_path = ROOT / "examples" / "skill-use-cases.md"
+    if not examples_path.exists():
+        errors.append("missing examples/skill-use-cases.md")
+    else:
+        examples = examples_path.read_text(encoding="utf-8")
+        for skill_name in skill_names:
+            if f"`{skill_name}`" not in examples:
+                errors.append(f"{examples_path}: missing skill example for {skill_name}")
+
     return errors
 
 
 def _validate_automation_files() -> list[str]:
     errors: list[str] = []
     for relative in (
+        "CHANGELOG.md",
         ".github/workflows/validate.yml",
         ".github/workflows/release.yml",
         ".github/release.yml",
