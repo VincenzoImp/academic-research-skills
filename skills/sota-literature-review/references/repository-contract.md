@@ -71,6 +71,25 @@ understand what is active in the project. Generated MCP snippets may live under
 `docs/agent/generated/`, but must never contain API keys, cookies, Overleaf
 tokens, or browser session data.
 
+In repositories created by `create-academic-research`, prefer the project-local
+npm lifecycle scripts:
+
+- `npm run doctor` for structural checks.
+- `npm run update` for a dry-run managed-file refresh, and
+  `npm run update -- --apply` to write those managed changes.
+- `npm run skills:install -- --preset <preset>` for project-local skill
+  installs.
+- `npm run mcp:env -- <server>`, `npm run mcp:dotenv`,
+  `npm run mcp:doctor -- --env-file .env.local`,
+  `npm run mcp:smoke -- --env-file .env.local`, and
+  `npm run mcp:probe -- <server>` for MCP setup and checks.
+
+For one-off use outside a generated project, invoke the package explicitly:
+
+```bash
+npm exec --yes --package=create-academic-research@latest -- academic-research <command>
+```
+
 ## Non-Template Repositories
 
 When a target repository does not follow this contract, map outputs to the

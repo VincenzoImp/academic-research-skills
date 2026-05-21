@@ -51,7 +51,7 @@ in the user's environment:
 When a project was created with `create-academic-research`, prefer:
 
 ```bash
-npx academic-research skills install --preset default
+npm run skills:install -- --preset default
 ```
 
 Manual project-local install commands:

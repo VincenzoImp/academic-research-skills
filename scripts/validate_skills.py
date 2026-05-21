@@ -123,6 +123,10 @@ def _validate_package_contract(skill_names: set[str]) -> list[str]:
         "/Users/vincenzo",
         "still private",
         "repository is still private",
+        "npx academic-research",
+        "academic-research doctor",
+        "academic-research skills",
+        "academic-research mcp",
     ):
         if stale_path in combined_text:
             errors.append(f"package text contains stale or local path: {stale_path!r}")

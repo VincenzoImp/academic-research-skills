@@ -210,6 +210,10 @@ def test_project_contract_references_are_current() -> None:
         "/Users/vincenzo",
         "still private",
         "repository is still private",
+        "npx academic-research",
+        "academic-research doctor",
+        "academic-research skills",
+        "academic-research mcp",
     ):
         assert stale not in text
 

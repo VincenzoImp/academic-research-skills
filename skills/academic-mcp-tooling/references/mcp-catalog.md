@@ -34,7 +34,7 @@ document.
 
 Repositories created by `create-academic-research` should keep `.env.example`
 as a committed, empty-value reference for MCP environment variables. Regenerate
-it with `academic-research mcp env --write .env.example --all` when the MCP catalog changes.
+it with `npm run mcp:dotenv` when the MCP catalog changes.
 Filled `.env`, `.env.local`, API keys, tokens, cookies, and browser sessions
 must remain local or in the MCP client's secret store.
 
@@ -54,15 +54,15 @@ has configured the required environment variables or local applications.
 - Do not commit placeholder MCP env values such as `${API_KEY}` into generated
   client config. Put required env vars in local shell/client secrets and
   document them in `docs/agent/mcp-setup.md`.
-- In `create-academic-research` projects, use `academic-research mcp env
-  <server>` to print required/recommended env vars, hosted endpoints, local
-  prerequisites, and setup commands before enabling or smoke-testing a server.
-  Use `academic-research mcp env --write .env.example --all` only to generate a
-  public example file, not to store real secrets.
-- Use `academic-research mcp doctor --env-file .env.local` or
-  `academic-research mcp smoke --env-file .env.local` when explicit local
-  secrets are needed for checks. Use `academic-research mcp probe <server>`
-  only when intentionally starting selected MCP server processes.
+- In `create-academic-research` projects, use
+  `npm run mcp:env -- <server>` to print required/recommended env vars, hosted
+  endpoints, local prerequisites, and setup commands before enabling or
+  smoke-testing a server. Use `npm run mcp:dotenv` only to generate a public
+  example file, not to store real secrets.
+- Use `npm run mcp:doctor -- --env-file .env.local` or
+  `npm run mcp:smoke -- --env-file .env.local` when explicit local secrets are
+  needed for checks. Use `npm run mcp:probe -- <server>` only when intentionally
+  starting selected MCP server processes.
 
 ## Source Priority For SOTA
 
