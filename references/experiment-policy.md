@@ -8,14 +8,17 @@ loops.
 Before a run campaign, record:
 
 - research question or hypothesis
-- editable files or modules
-- non-editable files or frozen evaluation harness
+- Mutability Envelope: editable files or modules, read-only files or modules,
+  allowed dependencies, and forbidden changes
+- Frozen Harness: non-editable evaluation code, dataset split, metric direction,
+  resource measure, and fixed time or compute budget
 - metric and direction
 - time budget
 - compute constraints
 - allowed dependencies
 - stopping condition
 - output directory
+- baseline run
 
 ## Run Ledger
 
@@ -30,8 +33,23 @@ Every run should record:
 - metric result
 - runtime
 - resource usage if relevant
-- status: trusted, exploratory, failed, discarded
+- status: trusted, exploratory, failed, discarded, keep, discard, crash
 - short description
+
+## Frontier Ledger
+
+For autonomous or overnight campaigns, keep a tab-separated frontier ledger such
+as `experiments/campaigns/frontier-results.tsv` with a compact row per
+candidate. The minimum columns are:
+
+```tsv
+run_id	git_commit	metric_value	resource_value	status	description
+```
+
+Use `keep, discard, crash` as campaign statuses when the campaign advances a
+single frontier. A candidate can be kept only when it improves the agreed metric
+or meaningfully simplifies the system without degrading the metric. The baseline
+run must be recorded before the first candidate.
 
 ## Autonomous Loop Rule
 

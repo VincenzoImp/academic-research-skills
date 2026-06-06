@@ -1,4 +1,4 @@
 interface:
   display_name: "SOTA Literature Review"
-  short_description: "Build and maintain state-of-the-art reviews, paper matrices, gap analyses, and synthesis pages."
-  default_prompt: "Use $sota-literature-review to organize related work into a traceable SOTA matrix, synthesis, and gap analysis."
+  short_description: "Build SOTA reviews from ideas, seeds, or papers with citation chasing, full-text synthesis, BibTeX gates, and survey drafts."
+  default_prompt: "Use $sota-literature-review to run a traceable SOTA workflow with declared scale, citation chasing, full-text reading, synthesis, bibliography, and gap analysis."

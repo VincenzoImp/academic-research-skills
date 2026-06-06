@@ -127,6 +127,7 @@ def _validate_package_contract(skill_names: set[str]) -> list[str]:
         "academic-research doctor",
         "academic-research skills",
         "academic-research mcp",
+        "wiki/templates/reviewer-concern-page.md",
     ):
         if stale_path in combined_text:
             errors.append(f"package text contains stale or local path: {stale_path!r}")
@@ -198,6 +199,7 @@ def _validate_automation_files() -> list[str]:
         ".github/release.yml",
         ".github/dependabot.yml",
         "scripts/check_release.py",
+        "scripts/sync_skill_references.py",
     ):
         if not (ROOT / relative).exists():
             errors.append(f"missing release/automation file: {relative}")
@@ -208,10 +210,17 @@ def _validate_automation_files() -> list[str]:
         for required in (
             "github.event.repository.private == false",
             "--generate-notes",
+            "python3 scripts/sync_skill_references.py --check",
             "bash scripts/smoke_install_skills.sh VincenzoImp/academic-research-skills",
         ):
             if required not in text:
                 errors.append(f"{release_workflow}: missing required release guard/action {required!r}")
+
+    validate_workflow = ROOT / ".github" / "workflows" / "validate.yml"
+    if validate_workflow.exists():
+        text = validate_workflow.read_text(encoding="utf-8")
+        if "python3 scripts/sync_skill_references.py --check" not in text:
+            errors.append(f"{validate_workflow}: missing skill reference sync check")
 
     smoke_install = ROOT / "scripts" / "smoke_install_skills.sh"
     if smoke_install.exists():

@@ -17,6 +17,8 @@ Use this contract when a skill needs to write or locate project artifacts.
 - `sota/prisma-flow.md`: reproducible review counts and flow notes.
 - `wiki/`: LLM-maintained persistent knowledge base.
 - `docs/agent/`: active agent state, MCP setup, project workflows, and research program files.
+- `docs/agent/project-quality.md`: Project Quality Contract for request intake,
+  work zones, trusted outputs, hygiene gates, and badge readiness.
 - `configs/agent-stack.yaml`: optional skill/MCP capability manifest for agentic onboarding.
 - `configs/capabilities.yaml`: optional project-local active skill/MCP state, usually written by `create-academic-research`.
 - `docs/agent/capability-profile.md`: active skill/MCP capability profile when available.
@@ -31,6 +33,8 @@ Use this contract when a skill needs to write or locate project artifacts.
 - `docs/reproducibility/`: commands, environments, artifact policies, and result reproduction notes.
 - `docs/ethics/data-governance.md`: privacy, consent, sensitivity, terms, licensing, retention, and sharing notes.
 - `experiments/`: human-curated experiment records, registries, and plans.
+- `experiments/campaigns/`: autonomous campaign plans, frontier ledgers, and
+  bounded iteration summaries.
 - `scripts/`: thin repeatable command entrypoints that call reusable code in `src/`.
 - `notebooks/`: optional exploratory and narrative notebooks; reusable logic belongs in `src/`.
 - `repro_outputs/`: trusted reproduction evidence for external repos or papers.
@@ -45,6 +49,62 @@ Use this contract when a skill needs to write or locate project artifacts.
 - `reports/rebuttal/`: reviewer concern maps, rebuttal drafts, and revision plans.
 - `reports/slides/`: presentation material.
 - `artifacts/`: artifact evaluation checklists and public release preparation.
+- `artifacts/badge-evidence-ledger.csv`: evidence ledger for Artifacts
+  Available, Artifacts Evaluated Functional/Reusable, and Results
+  Reproduced/Replicated readiness.
+
+## Project Quality Contract
+
+Use this contract for every user request, not only maintenance tasks. The user
+should guide research direction; agents should preserve internal order,
+provenance, validation, and file hygiene.
+
+### Request Intake
+
+Classify each request before acting: idea/positioning, source/SOTA,
+experiment/reproduction, analysis, paper/LaTeX, artifact, venue/review,
+ethics/governance, MCP/skills, or maintenance. Route through the narrowest
+skill and update every durable record touched by that workflow.
+
+### Clean Work Zones
+
+Keep work in the correct zone:
+
+- raw evidence in `sources/`, `data/raw/`, or `data/external/`
+- reading and synthesis in `sources/markdown-linear/`, `sota/`, and `wiki/`
+- exploratory work in `explore_outputs/`
+- diagnostics in `debug_outputs/`
+- analyses in `analysis_outputs/`
+- trusted reproductions in `repro_outputs/`
+- curated paper-facing exports in `outputs/`
+- manuscripts, LaTeX, reviews, rebuttals, and slides in `reports/`
+- release and badge material in `artifacts/`
+
+Do not mix exploratory, trusted, raw, and final outputs. Promote artifacts only
+when provenance, command/procedure, inputs, validation, and limitations are
+recorded.
+
+### Trusted Outputs
+
+An output is trusted only when it names inputs, command/procedure, environment
+or dependency notes, expected output or validation criterion, linked claim or
+research question, and known limitations.
+
+### Project Hygiene Gate
+
+Before finishing, update the relevant ledger, matrix, wiki page, checklist, or
+paper file; keep raw sources immutable; keep reusable logic in `src/`; keep
+scripts thin; keep secrets/caches/private data out of git; reconcile source IDs,
+citation keys, run IDs, and claim IDs; append durable changes to `wiki/log.md`;
+and run the smallest meaningful validation command.
+
+### Badge Readiness
+
+When work touches code, data, benchmarks, models, experiments, reproduction, or
+release material, update `artifacts/badge-evidence-ledger.csv` and
+`artifacts/artifact-checklist.md`. Track readiness for Artifacts Available,
+Artifacts Evaluated Functional, Artifacts Evaluated Reusable, Results
+Reproduced, and Results Replicated throughout the project.
 
 ## Wiki Files
 

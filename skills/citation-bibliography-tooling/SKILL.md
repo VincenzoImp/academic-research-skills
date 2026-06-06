@@ -28,7 +28,10 @@ metadata is not evidence by itself, but it is the backbone for traceability.
    unsupported citations.
 6. Sync `sources/source-ledger.csv` and `sota/literature-matrix.csv` with stable
    `source_id` values.
-7. For manuscripts, compare in-text citations against bibliography entries and
+7. For SOTA survey work, enforce the BibTeX gate before writing:
+   every cited source has a verified entry, source ledger row, matrix row, and
+   stable citation key.
+8. For manuscripts, compare in-text citations against bibliography entries and
    claim pages.
 
 ## Canonical Metadata Order
@@ -67,6 +70,9 @@ Do not change citation keys in a paper without updating all references.
   and venue names without changing scientific meaning.
 - `sync`: update `sources/source-ledger.csv` and any source or claim pages that
   reference changed keys.
+- `survey-gate`: verify every citation in `reports/paper/sota-survey.tex`
+  resolves to `sources/bib/references.bib` and a `sota/literature-matrix.csv`
+  row before claim audit.
 
 ## Quality Gate
 

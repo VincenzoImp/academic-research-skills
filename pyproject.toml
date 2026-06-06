@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "academic-research-skills"
-version = "0.1.7"
+version = "0.1.8"
 description = "Agent skills for literature review, citation audit, paper writing, peer review, reproducibility, and academic research project maintenance."
 requires-python = ">=3.11"
 license = "MIT"

@@ -5,7 +5,8 @@
       "skill": "academic-mcp-tooling",
       "should_trigger": [
         "Choose and configure MCP servers for arXiv, OpenAlex, Semantic Scholar, Zotero, and Overleaf in this research repo.",
-        "Audit whether our scholarly search MCP setup can support citation graph and author lookup workflows."
+        "Audit whether our scholarly search MCP setup can support citation graph and author lookup workflows.",
+        "Prepare the literature workflow stack so a SOTA agent can use arXiv, DBLP, Semantic Scholar, and OpenAlex without manual MCP stitching."
       ],
       "should_not_trigger": [
         "Summarize this already downloaded PDF without changing any MCP configuration."
@@ -25,7 +26,8 @@
       "skill": "artifact-open-science",
       "should_trigger": [
         "Prepare the code, data, commands, and metadata for an artifact evaluation submission.",
-        "Audit this project for open science release readiness, including reproducibility and dataset card gaps."
+        "Audit this project for open science release readiness, including reproducibility and dataset card gaps.",
+        "Map this research project to ACM artifact badges, including Available, Functional, Reusable, Reproduced, and Replicated."
       ],
       "should_not_trigger": [
         "Brainstorm three possible research questions for a new idea."
@@ -95,7 +97,8 @@
       "skill": "experiment-logbook",
       "should_trigger": [
         "Plan and record an ablation run with config, command, seed, metric, and outcome notes.",
-        "Compare these overnight training runs and update the experiment logbook."
+        "Compare these overnight training runs and update the experiment logbook.",
+        "Set up an autonomous experiment campaign with a frozen harness, frontier ledger, and keep/discard/crash policy."
       ],
       "should_not_trigger": [
         "Move a messy downloaded source archive into the repo structure."
@@ -205,7 +208,8 @@
       "skill": "sota-literature-review",
       "should_trigger": [
         "Build a SOTA matrix from these papers and synthesize gaps, trends, and related-work claims.",
-        "Compare the literature around this topic and identify what is novel enough for a contribution."
+        "Compare the literature around this topic and identify what is novel enough for a contribution.",
+        "From this rough idea and two seed papers, run a full-survey SOTA with forward and backward citation chasing, full-text paper syntheses, a clean references.bib, and a LaTeX survey draft."
       ],
       "should_not_trigger": [
         "Prepare artifact evaluation packaging for an accepted paper."

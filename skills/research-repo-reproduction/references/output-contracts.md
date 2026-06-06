@@ -2,6 +2,36 @@
 
 Use these contracts to avoid ambiguous "done" states.
 
+Use this file with the Project Quality Contract in
+`references/repository-contract.md`. A generated file is not automatically a
+trusted output; it must stay in the correct work zone until provenance,
+procedure, validation, limitations, and linked claims are recorded.
+
+## Trust Levels
+
+- `explore_outputs/`: exploratory variants, early hypotheses, and caveated runs.
+- `debug_outputs/`: diagnosis artifacts for failures, data issues, or scientific bugs.
+- `analysis_outputs/`: analysis reports, audits, intermediate tables, and draft figures.
+- `repro_outputs/`: trusted reproduction evidence for external or internal results.
+- `train_outputs/`: trusted training run evidence when model training is part of the research.
+- `outputs/`: curated paper-facing figures, tables, models, and exportable derived assets.
+
+## Promotion Rules
+
+Do not promote an output into `outputs/`, `repro_outputs/`, `train_outputs/`,
+`reports/`, or `artifacts/` until it names:
+
+- input sources, datasets, or run records
+- command, script, notebook, or manual procedure
+- environment or dependency notes
+- expected output or validation criterion
+- linked claim, research question, experiment, source, or artifact checklist row
+- known limitations
+
+If any item is missing, keep the material in `explore_outputs/`,
+`analysis_outputs/`, or `debug_outputs/` and record the gap in the relevant
+wiki page, ledger, or checklist.
+
 ## Source Ingestion
 
 - `sources/source-ledger.csv` updated.
@@ -56,9 +86,13 @@ Use these contracts to avoid ambiguous "done" states.
 - `sota/search-strategy.md`: query strings, sources, filters, inclusion criteria.
 - `sota/screening-decisions.csv`: screening decisions for structured reviews.
 - `sota/prisma-flow.md`: counts for systematic/scoping reviews.
+- `sota/citation-chasing-log.csv`: backward/forward citation expansion rounds, promoted seeds, and stopping rule.
+- `sota/reading-log.csv`: full-text linear reading status for core/supporting sources.
 - `sota/literature-matrix.csv`: structured paper table.
+- `sota/paper-syntheses/`: per-source syntheses for core/supporting papers.
 - `sota/synthesis.md`: current state of the art and gap analysis.
 - `sota/gaps.md`: open opportunities and unresolved disagreements.
+- `reports/paper/sota-survey.tex`: LaTeX survey or SOTA chapter when the requested output is survey-scale.
 - `wiki/contradictions.md` updated when sources conflict.
 
 ## Claim Audit
@@ -96,6 +130,7 @@ Use these contracts to avoid ambiguous "done" states.
 ## Artifact And Open Science
 
 - `artifacts/artifact-checklist.md`
+- `artifacts/badge-evidence-ledger.csv`: badge target, evidence path, linked claim/result, procedure, validation status.
 - release notes, license, citation, data access, and smoke-test command.
 
 ## Ethics And Governance
@@ -115,6 +150,8 @@ Use these contracts to avoid ambiguous "done" states.
 
 - `experiments/registry.csv` updated.
 - `experiments/<run_id>.md` created for human-readable context.
+- `experiments/campaigns/<campaign_id>.md` created for autonomous or overnight experiment campaigns.
+- `experiments/campaigns/frontier-results.tsv` or a campaign-specific frontier ledger updated for `keep`, `discard`, and `crash` decisions.
 - `wiki/templates/experiment-page.md` used when a run changes project knowledge or claims.
 - Machine logs stay in `train_outputs/`, `explore_outputs/`, or `debug_outputs/`; curated exports move to `outputs/`.
 - Trusted, exploratory, and failed runs are clearly separated.

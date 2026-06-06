@@ -5,9 +5,10 @@
 [![Release Skills](https://github.com/VincenzoImp/academic-research-skills/actions/workflows/release.yml/badge.svg)](https://github.com/VincenzoImp/academic-research-skills/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Professional agent skill package for academic research: literature review,
-source ingestion, citation hygiene, claim auditing, paper writing, peer review,
-rebuttal strategy, reproducibility, MCP tooling, and project maintenance.
+Professional agent skill package for academic research: autonomous SOTA and
+survey workflows, source ingestion, citation hygiene, claim auditing, paper
+writing, peer review, rebuttal strategy, reproducibility, MCP tooling, and
+project maintenance.
 
 The skills are broadly useful for academic work and give first-class support to
 computer science research across AI/ML, systems, HCI, security, software
@@ -55,22 +56,22 @@ policies beside this package; those concepts are consolidated here.
 - `source-ingestion`: ingest papers, PDFs, proposals, datasets, and web sources.
 - `document-conversion`: convert PDFs, DOCX, scanned papers, tables, and figures with quality notes.
 - `citation-bibliography-tooling`: normalize BibTeX, citation keys, identifiers, and bibliography audits.
-- `sota-literature-review`: build and maintain state-of-the-art reviews.
+- `sota-literature-review`: build full SOTA reviews from ideas, seeds, or papers with citation chasing, full-text reading, BibTeX gates, survey LaTeX, and gap maps.
 - `systematic-review-prisma`: run reproducible searches, screening, and PRISMA-style review artifacts.
 - `citation-claim-audit`: verify claims, citations, evidence, and provenance.
 - `cs-methodology-evaluation`: design and audit CS experiments, baselines, metrics, and validity.
 - `adversarial-peer-review`: review papers like a severe but fair top-venue reviewer.
 - `paper-writing-review`: draft, revise, and review manuscripts without fabricating evidence.
 - `rebuttal-revision-strategy`: map reviewer concerns and write precise rebuttals/revisions.
-- `artifact-open-science`: prepare reproducibility packages and artifact evaluation material.
+- `artifact-open-science`: prepare reproducibility packages and ACM-style artifact badge material.
 - `repo-migration`: move messy academic repos and archives into the standard project structure.
 - `research-repo-reproduction`: audit and reproduce research code repositories.
-- `experiment-logbook`: run and record bounded computational experiments.
+- `experiment-logbook`: run and record bounded experiments and autonomous campaign frontiers.
 - `research-data-analysis`: analyze data and produce publication-quality tables and figures.
 - `research-ui-prototyping`: build research dashboards and paper-supporting interfaces.
 - `ethics-data-governance`: document human-subject, platform, privacy, license, and sharing risks.
 - `research-project-maintenance`: keep project folders, docs, wiki, and outputs coherent.
-- `academic-mcp-tooling`: select, configure, smoke-test, and document MCP servers for scholarly search.
+- `academic-mcp-tooling`: select, configure, smoke-test, and document MCP servers and literature workflow stacks for scholarly search.
 - `skill-evaluation`: pressure-test and refine academic research skills.
 
 ## Install
@@ -131,6 +132,7 @@ state belongs in the research repository, especially `AGENTS.md`, `docs/agent/`,
 
 ```bash
 python3.11 scripts/check_release.py vX.Y.Z
+python3.11 scripts/sync_skill_references.py --check
 python3.11 scripts/validate_skills.py
 bash scripts/spec_validate_skills.sh
 python3.11 -m pytest -q

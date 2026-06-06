@@ -43,3 +43,11 @@ Analysis should be repeatable, inspectable, and connected to claims.
 Notebooks can explore and explain. If the logic becomes part of the result,
 move it into `src/` and leave the notebook as a consumer.
 
+## Project Quality
+
+Keep raw, interim, processed, exploratory, analysis, and final paper-facing
+outputs separated. Promote a table, figure, statistic, or model result only
+when the input data, command or procedure, environment notes, validation check,
+and linked claim or experiment are recorded. If an analysis supports an
+artifact or reproducibility claim, add the evidence path and validation status
+to `artifacts/badge-evidence-ledger.csv`.

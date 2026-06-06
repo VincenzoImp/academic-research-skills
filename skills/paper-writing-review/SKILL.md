@@ -68,6 +68,14 @@ For existing LaTeX/Typst manuscripts, default to diagnosis and comment-style
 recommendations before source editing. Keep build fixes, bibliography changes,
 and prose rewrites separate.
 
+## Project Quality For LaTeX And Prose
+
+Keep manuscript and LaTeX files under `reports/paper/`, final figures and
+tables under `outputs/`, source evidence under `sources/` and `sota/`, and
+scratch drafts or audits outside trusted paper-facing outputs. Do not promote
+text into the manuscript unless citation keys, source IDs, figure/table paths,
+claim IDs, and unresolved evidence gaps remain traceable.
+
 ## Output
 
 For major revisions, produce:

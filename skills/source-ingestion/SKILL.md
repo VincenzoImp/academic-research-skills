@@ -25,16 +25,35 @@ are working artifacts.
    repository registration.
 4. Add or update `sources/source-ledger.csv`.
 5. Create or update `wiki/sources/<source_id>.md`.
-6. Extract claims, methods, datasets, limitations, and open questions.
-7. Update `wiki/index.md`, `wiki/log.md`, and any affected concept, claim, method, or question pages.
+6. For core/supporting sources, read the full text linearly end to end before
+   summarizing, and record reading progress (source, range, status) in a reading
+   log so deep reading is auditable and resumable. In `create-academic-research`
+   projects, use `sota/reading-log.csv`.
+7. Extract claims, methods, datasets, limitations, and open questions.
+8. Update `wiki/index.md`, `wiki/log.md`, and any affected concept, claim, method, or question pages.
+
+Preserve Project Quality during ingestion: raw sources stay immutable,
+abstract-only records stay out of durable claim support, and derived reading
+copies, SOTA syntheses, wiki pages, and bibliography entries are updated in
+their own work zones instead of being mixed into ad hoc notes.
+
+## Full-Text And Reading
+
+- Prefer acquiring the full-text PDF for every source that will support a claim;
+  abstract-only ingestion can seed a to-read queue but not durable evidence.
+- Save a linear reading copy under `sources/markdown-linear/<source_id>.md` when
+  the source needs cover-to-cover reading; keep the layout Markdown for tables
+  and figures.
+- For core/supporting sources, produce a structured per-source synthesis after
+  reading, using the per-source synthesis template defined in the
+  `sota-literature-review` skill, and store it under `sota/paper-syntheses/`
+  unless the project has a more specific review folder.
 
 ## Evidence Record
 
 For reusable sources, add an evidence record to the source page:
 
 ```md
-## Evidence Record
-
 Evidence ID:
 Source type: full paper | preprint | dataset | experiment artifact | project note | abstract-only | webpage placeholder
 Supports:
@@ -76,6 +95,8 @@ The task is not complete until these are updated when applicable:
 - derived Markdown path
 - metadata or BibTeX path
 - `sources/source-ledger.csv`
+- `sota/reading-log.csv` for core/supporting full-text reads
+- `sota/paper-syntheses/<source_id>.md` for SOTA core/supporting sources
 - `wiki/sources/<source_id>.md`
 - `wiki/index.md`
 - `wiki/log.md`

@@ -57,9 +57,37 @@ Minimum fields:
 - Never alter the metric, data split, or evaluation harness silently.
 - Stop for human approval if the change alters scientific meaning.
 
+For overnight or fully autonomous campaigns, create
+`experiments/campaigns/<campaign_id>.md` from the scaffold campaign template and
+maintain `experiments/campaigns/frontier-results.tsv` or a campaign-specific
+copy. The campaign must define:
+
+- mutability envelope: editable files, read-only files, allowed dependencies,
+  and forbidden changes
+- frozen harness: dataset split, evaluation command, metric direction, resource
+  measure, and fixed time or compute budget
+- baseline run before any candidate change
+- frontier policy: `keep`, `discard`, and `crash` statuses with a clear rule for
+  advancing or reverting candidates
+- stop conditions and the events that require human approval
+
+Use a frontier plot when it helps interpretation: discarded candidates as
+background points, kept candidates as the running best, and labels only for
+changes that materially explain the frontier.
+
 ## Output Separation
 
 - `train_outputs/`: trusted training evidence.
 - `explore_outputs/`: exploratory variants and caveated ideas.
 - `analysis_outputs/`: result analysis and figures.
 - `debug_outputs/`: failure diagnosis.
+
+## Project Quality And Badge Readiness
+
+Experiments that support a claim, figure, table, artifact, or reproducibility
+statement must remain traceable from `experiments/registry.csv` to the run
+record, command, inputs, outputs, and validation result. Keep exploratory runs
+in `explore_outputs/`; promote only trusted evidence to `train_outputs/`,
+`repro_outputs/`, or `outputs/`. When a run supports artifact availability,
+functionality, reusability, reproduction, or replication, update
+`artifacts/badge-evidence-ledger.csv`.

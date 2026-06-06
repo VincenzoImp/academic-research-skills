@@ -24,6 +24,7 @@ goal is to route deliberately and preserve project state.
 | Convert PDFs, scans, DOCX, tables, or figures to Markdown/assets | `document-conversion` |
 | Normalize BibTeX, identifiers, citation keys, missing/unused citations | `citation-bibliography-tooling` |
 | Find related work, build SOTA, compare papers, discover gaps | `sota-literature-review` |
+| Build a SOTA from an idea, seed, or few references into full-text syntheses, BibTeX, survey LaTeX, and research agenda | `research-design-positioning` then `academic-mcp-tooling` then `sota-literature-review` then `citation-bibliography-tooling` then `citation-claim-audit` |
 | Run reproducible systematic/scoping review and PRISMA-style screening | `systematic-review-prisma` |
 | Check citations, claims, numbers, evidence, bibliography | `citation-claim-audit` |
 | Design/audit CS evaluation, baselines, metrics, ablations, validity | `cs-methodology-evaluation` |
@@ -49,6 +50,15 @@ goal is to route deliberately and preserve project state.
 3. Route to the narrowest skill that can complete the task.
 4. If several workflows are required, order them as: design/position -> venue/frame -> ingest/convert -> synthesize/review -> evaluate/audit -> write -> rebuttal/artifact -> reproduce/experiment -> update project/wiki.
 5. Update `wiki/log.md` or the appropriate output ledger when the task changes project knowledge.
+
+Maintain the Project Quality Contract throughout routing: classify the request,
+keep outputs in the correct work zone, promote only trusted outputs, and update
+the relevant ledger, wiki page, or badge evidence record when the task creates
+durable project state.
+
+For full SOTA or survey work in a `create-academic-research` project, run
+`npm run workflow:literature` early so arXiv, DBLP, Semantic Scholar, and
+OpenAlex graph search are selected before citation chasing.
 
 ## Do Not
 

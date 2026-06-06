@@ -16,6 +16,7 @@ formatting.
 - `references/systematic-review-policy.md`
 - `references/source-ledger.md`
 - `references/mcp-catalog.md`
+- `references/citation-chasing.md`
 
 ## Workflow
 
@@ -23,12 +24,17 @@ formatting.
    range before broad searching.
 2. Record databases and exact query strings in `sota/search-strategy.md`.
 3. Export raw search results to `sources/metadata/`.
-4. Deduplicate by DOI, arXiv ID, PMID, title, and author/year.
-5. Record screening decisions in `sota/screening-decisions.csv`.
-6. Update counts and reasons in `sota/prisma-flow.md`.
-7. Promote included works to `sources/source-ledger.csv` and
+4. Expand the candidate set with citation chasing from seeds and included works:
+   backward references and forward citations. See `references/citation-chasing.md`
+   and record rounds in `sota/citation-chasing-log.csv`.
+5. Deduplicate by DOI, arXiv ID, PMID, title, and author/year.
+6. Record screening decisions in `sota/screening-decisions.csv`.
+7. Update counts and reasons in `sota/prisma-flow.md`.
+8. Promote included works to `sources/source-ledger.csv` and
    `sota/literature-matrix.csv`.
-8. Write synthesis in `sota/synthesis.md` and gaps in `sota/gaps.md`.
+9. Track full-text retrieval and linear reading in `sota/reading-log.csv` for
+   included works that support durable claims.
+10. Write synthesis in `sota/synthesis.md` and gaps in `sota/gaps.md`.
 
 ## Protocol Fields
 
@@ -78,6 +84,8 @@ At minimum, maintain:
 - `sota/screening-decisions.csv`
 - `sota/prisma-flow.md`
 - `sota/literature-matrix.csv`
+- `sota/citation-chasing-log.csv`
+- `sota/reading-log.csv`
 - `sota/synthesis.md`
 - `sota/gaps.md`
 - `wiki/log.md`

@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 import re
+import subprocess
+import sys
 
 
 def test_each_skill_has_skill_md() -> None:
@@ -102,6 +104,24 @@ def test_skill_references_are_self_contained() -> None:
             )
 
 
+def test_sync_skill_references_script_checks_local_copies() -> None:
+    root = Path(__file__).resolve().parents[1]
+    script = root / "scripts" / "sync_skill_references.py"
+
+    assert script.exists()
+    result = subprocess.run(
+        [sys.executable, str(script), "--check"],
+        cwd=root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "OK:" in result.stdout
+
+
 def test_openai_metadata_is_human_written() -> None:
     root = Path(__file__).resolve().parents[1]
     for metadata_path in sorted((root / "skills").glob("*/agents/openai.yaml")):
@@ -165,6 +185,7 @@ def test_package_is_ready_for_public_skills_registry() -> None:
     assert (root / ".github" / "release.yml").exists()
     assert (root / ".github" / "dependabot.yml").exists()
     assert (root / "scripts" / "check_release.py").exists()
+    assert (root / "scripts" / "sync_skill_references.py").exists()
     assert (root / "scripts" / "smoke_install_skills.sh").exists()
     assert (root / "scripts" / "spec_validate_skills.sh").exists()
     assert (root / "evals" / "trigger-boundaries.json").exists()
@@ -172,6 +193,7 @@ def test_package_is_ready_for_public_skills_registry() -> None:
     assert "npx -y skills add VincenzoImp/academic-research-skills --skill '*' --copy -y" in readme
     assert "npx -y skills add VincenzoImp/academic-research-skills --agent '*' --skill '*' --copy -y" in readme
     assert "bash scripts/spec_validate_skills.sh" in readme
+    assert "python3.11 scripts/sync_skill_references.py --check" in readme
     assert "bash scripts/smoke_install_skills.sh" in readme
     assert "--agent '*'" in readme
     assert "--agent codex claude-code cursor windsurf opencode" not in readme
@@ -242,3 +264,153 @@ def test_skill_use_case_examples_cover_current_skills() -> None:
         assert f"`{skill}`" in examples
     assert "Use Case" in examples
     assert "Near Miss" in examples
+
+
+def test_sota_skill_defines_autonomous_deep_review_contract() -> None:
+    root = Path(__file__).resolve().parents[1]
+    sota = (root / "skills" / "sota-literature-review" / "SKILL.md").read_text(
+        encoding="utf-8"
+    )
+    citation_chasing = (
+        root / "skills" / "sota-literature-review" / "references" / "citation-chasing.md"
+    ).read_text(encoding="utf-8")
+    per_source = (
+        root
+        / "skills"
+        / "sota-literature-review"
+        / "references"
+        / "per-source-synthesis-template.md"
+    ).read_text(encoding="utf-8")
+    survey = (
+        root / "skills" / "sota-literature-review" / "references" / "survey-production.md"
+    ).read_text(encoding="utf-8")
+    artifact = (root / "references" / "artifact-open-science-policy.md").read_text(
+        encoding="utf-8"
+    )
+
+    for required in (
+        "quick-scan",
+        "focused-sota",
+        "full-survey",
+        "sota/reading-log.csv",
+        "sota/citation-chasing-log.csv",
+        "sota/paper-syntheses/",
+        "sources/markdown-linear/",
+        "sources/bib/references.bib",
+        "reports/paper/sota-survey.tex",
+        "ACM artifact",
+    ):
+        assert required in sota
+
+    for required in (
+        "anti-echo-chamber",
+        "seed diversification",
+        "frontier",
+        "saturation",
+        "stratified",
+    ):
+        assert required in citation_chasing
+
+    for required in (
+        "Linear Reading Notes",
+        "Citation Leads To Chase",
+        "Methodological Assumptions",
+        "Project-Specific Delta",
+    ):
+        assert required in per_source
+
+    for required in (
+        "BibTeX gate",
+        "LaTeX",
+        "research agenda",
+        "citation-claim-audit",
+    ):
+        assert required in survey
+
+    for required in (
+        "Artifacts Available",
+        "Artifacts Evaluated",
+        "Functional",
+        "Reusable",
+        "Results Reproduced",
+        "Results Replicated",
+    ):
+        assert required in artifact
+
+
+def test_project_quality_contract_is_cross_cutting() -> None:
+    root = Path(__file__).resolve().parents[1]
+    contract = (root / "references" / "repository-contract.md").read_text(
+        encoding="utf-8"
+    )
+
+    for required in (
+        "Project Quality Contract",
+        "Request Intake",
+        "Clean Work Zones",
+        "Trusted Outputs",
+        "Project Hygiene Gate",
+        "Badge Readiness",
+        "artifacts/badge-evidence-ledger.csv",
+        "docs/agent/project-quality.md",
+    ):
+        assert required in contract
+
+    for skill in (
+        "research-project-router",
+        "research-project-maintenance",
+        "source-ingestion",
+        "sota-literature-review",
+        "experiment-logbook",
+        "research-data-analysis",
+        "paper-writing-review",
+        "artifact-open-science",
+    ):
+        text = (root / "skills" / skill / "SKILL.md").read_text(encoding="utf-8")
+        assert "Project Quality" in text or "quality" in text.lower()
+
+
+def test_experiment_logbook_defines_autonomous_campaign_contract() -> None:
+    root = Path(__file__).resolve().parents[1]
+    skill = (root / "skills" / "experiment-logbook" / "SKILL.md").read_text(
+        encoding="utf-8"
+    )
+    policy = (root / "references" / "experiment-policy.md").read_text(encoding="utf-8")
+    output_contracts = (root / "references" / "output-contracts.md").read_text(
+        encoding="utf-8"
+    )
+
+    for required in (
+        "mutability envelope",
+        "frozen harness",
+        "baseline",
+        "frontier",
+        "keep",
+        "discard",
+        "crash",
+        "experiments/campaigns/",
+        "frontier-results.tsv",
+    ):
+        assert required in skill.lower()
+
+    for required in (
+        "Mutability Envelope",
+        "Frontier Ledger",
+        "baseline run",
+        "keep, discard, crash",
+    ):
+        assert required in policy
+
+    assert "experiments/campaigns/frontier-results.tsv" in output_contracts
+
+
+def test_skill_paths_match_scaffold_templates() -> None:
+    root = Path(__file__).resolve().parents[1]
+    paths = [
+        root / "README.md",
+        *sorted((root / "references").glob("*.md")),
+        *sorted((root / "skills").glob("*/SKILL.md")),
+    ]
+    text = "\n".join(path.read_text(encoding="utf-8") for path in paths)
+
+    assert "wiki/templates/reviewer-concern-page.md" not in text

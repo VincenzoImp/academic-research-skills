@@ -24,9 +24,14 @@ layer for search, synthesis, and LLM reading.
 3. Pick the least lossy converter available: Docling/Nutrient-style PDF tools,
    `pdftotext`, PyMuPDF, OCR, Pandoc, or a project-specific parser.
 4. Save Markdown to `sources/markdown/<source_id>.md` when it is a research source.
-5. Save extracted figures/tables/assets under `sources/assets/<source_id>/`.
-6. Append a row to `sources/conversion-ledger.csv`.
-7. Update `sources/source-ledger.csv` and `wiki/sources/<source_id>.md`.
+5. When a source needs cover-to-cover reading, also save a linear reading copy
+   under `sources/markdown-linear/<source_id>.md`: single-column, reading order,
+   suitable for full sequential reading.
+6. Save extracted figures/tables/assets under `sources/assets/<source_id>/`.
+7. For SOTA core/supporting papers, record the linear reading copy path in
+   `sota/reading-log.csv` or the matrix row.
+8. Append a row to `sources/conversion-ledger.csv`.
+9. Update `sources/source-ledger.csv` and `wiki/sources/<source_id>.md`.
 
 ## Quality Gate
 

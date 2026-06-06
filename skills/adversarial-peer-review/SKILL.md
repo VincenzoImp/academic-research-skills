@@ -27,7 +27,8 @@ external reviewers do.
 5. Attack novelty, significance, correctness, methodology, clarity, ethics, and reproducibility.
 6. Separate fatal flaws, major weaknesses, minor issues, and presentation issues.
 7. Produce reviewer-style scores only when the user asks or the venue requires them.
-8. Save reusable findings in `reports/reviews/` or `wiki/templates/reviewer-concern-page.md` derived pages.
+8. Save reusable findings in `reports/reviews/` or pages derived from
+   `wiki/templates/reviewer-concern.md`.
 
 ## Review Lanes
 

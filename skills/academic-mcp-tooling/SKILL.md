@@ -21,6 +21,19 @@ If the target repo has `configs/agent-stack.yaml`, read it before selecting MCP
 servers. If it has `docs/agent/capability-profile.md`, treat that as the active
 capability state.
 
+For serious SOTA or survey work in a `create-academic-research` project, prefer
+the scenario command first:
+
+```bash
+npm run workflow:literature
+npm run mcp:status
+npm run mcp:smoke -- --env-file .env.local
+```
+
+Use lower-level `mcp enable`, `mcp env`, `mcp setup`, and `mcp probe` commands
+only when the scenario command is insufficient or the project needs a
+domain-specific server.
+
 ## Workflow
 
 1. Identify needed source systems: arXiv, Semantic Scholar, OpenAlex, Crossref,
@@ -29,7 +42,8 @@ capability state.
    wrappers when accuracy matters.
 3. Choose the smallest set of MCP servers that covers the project need.
 4. If the repository was created with `create-academic-research`, inspect the
-   current project state first with `npm run doctor`.
+   current project state first with `npm run doctor`, and for literature work
+   run `npm run workflow:literature` before hand-selecting graph servers.
 5. Document execution mode, finite install commands, hosted endpoints, setup
    commands, env vars, auth scopes, rate limits, risks, and workflows in
    `docs/agent/mcp-setup.md`.

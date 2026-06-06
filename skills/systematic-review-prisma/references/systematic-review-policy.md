@@ -27,13 +27,31 @@ Use short reasons in `sota/screening-decisions.csv`:
 - `low-relevance`
 - `quality-concern`
 
+## Search Completeness
+
+Keyword and database search is the first pass, not the whole search. For
+systematic and scoping reviews, also run citation chasing (backward references
+and forward citations) from seeds and included works, and record the achieved hop
+depth. Report keyword databases, citation-graph sources, and search dates
+together. Follow the citation-chasing procedure for backward and forward
+expansion.
+
+## Full-Text Of Included Works
+
+`no-full-text` is an exclusion reason at screening. For a work that passes
+screening but whose legal full text is not yet retrieved, mark it
+`full-text-pending` as a tracked limitation rather than dropping it silently or
+relying on its abstract for durable claims.
+
 ## Minimum Artifacts
 
 - `sota/search-strategy.md`
-- `sources/metadata/` raw exports
+- `sources/metadata/` raw exports, including citation-chasing exports
 - `sota/screening-decisions.csv`
 - `sota/prisma-flow.md`
 - `sota/literature-matrix.csv`
+- `sota/citation-chasing-log.csv`
+- `sota/reading-log.csv`
 - `sota/synthesis.md`
 
 ## Evidence Rule

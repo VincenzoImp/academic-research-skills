@@ -32,6 +32,11 @@ methodology claims. For long documents, sample only when the user accepts the
 sampling plan; final manuscript checks should cover every acceptance-critical
 claim.
 
+For `reports/paper/sota-survey.tex`, audit every durable survey claim that
+summarizes the field, compares methods, states novelty, reports metrics, or
+derives implications for the current research idea. Do not sample final SOTA
+survey claims unless the user explicitly accepts a sampled audit.
+
 ## Audit Table
 
 Use this structure in `analysis_outputs/claim-audit.md` or CSV:

@@ -24,7 +24,9 @@ Keep the repository usable as both software project and scholarly record.
 - update `docs/agent/` workflow and capability records
 - update `docs/agent/capability-profile.md`
 - update `docs/agent/mcp-setup.md`
+- update `docs/agent/project-quality.md`
 - update wiki templates
+- update `artifacts/badge-evidence-ledger.csv`
 - add structural tests
 - separate raw sources from derived outputs
 - move notebook logic into `src/`
@@ -40,9 +42,19 @@ Validate at least:
 - data policy is documented
 - output directories are separated by trust level
 - experiments have registry and record templates
+- the Project Quality Contract is present and matches the repository layout
+- badge evidence has an append-only ledger when the project targets artifact review
 - MCP and skill recommendations are documented
 - agent onboarding and capability profile are documented when the repo supports them
 - generated or large files are ignored appropriately
+
+## Project Quality Gate
+
+Maintenance is responsible for keeping the project easy to continue after many
+agent turns. Before finishing, confirm that new files live in the right work
+zone, trusted outputs have provenance and validation, scratch or debug material
+is not mixed with final outputs, and badge-related evidence is linked from
+`artifacts/badge-evidence-ledger.csv` and `artifacts/artifact-checklist.md`.
 
 ## Do Not
 
