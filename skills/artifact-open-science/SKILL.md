@@ -15,6 +15,7 @@ badges, camera-ready packages, and public release.
 - `references/artifact-open-science-policy.md`
 - `references/repository-contract.md`
 - `references/ethics-data-governance.md`
+- `references/workflow-stage-contracts.md`
 
 ## Workflow
 
@@ -33,6 +34,9 @@ badges, camera-ready packages, and public release.
 9. Update `artifacts/badge-evidence-ledger.csv` with badge target, evidence
    path, linked claim or result ID, command or procedure, validation status,
    and checked date.
+10. For paper-specific releases, run `npm run workflow:release` and inspect
+    `paper_releases/release-ledger.csv`, source maps, locks, checksums, and
+    active compliance profiles.
 
 ## Project Quality
 
@@ -57,3 +61,10 @@ private data, credentials, caches, bulky local outputs, or unvalidated results.
 - Release sensitive or license-restricted data without governance notes.
 - Ship a notebook-only artifact when a script/CLI is expected.
 - Claim reproducibility if only exploratory outputs are available.
+
+## Review Loop And Handoff
+
+Review artifact availability, functionality, reusability, reproduction claims,
+metadata, licenses, commands, and release evidence. Fix and re-review until
+badge and release claims have no blocking gaps. Handoff release-specific work
+to `paper-release` and profile checks to `badge-compliance-profiles`.

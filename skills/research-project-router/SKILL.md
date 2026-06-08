@@ -26,11 +26,20 @@ goal is to route deliberately and preserve project state.
 | Find related work, build SOTA, compare papers, discover gaps | `sota-literature-review` |
 | Build a SOTA from an idea, seed, or few references into full-text syntheses, BibTeX, survey LaTeX, and research agenda | `research-design-positioning` then `academic-mcp-tooling` then `sota-literature-review` then `citation-bibliography-tooling` then `citation-claim-audit` |
 | Run reproducible systematic/scoping review and PRISMA-style screening | `systematic-review-prisma` |
+| Turn reviewed SOTA claims into survey sections and survey claim ledgers | `survey-synthesis` |
+| Prioritize SOTA gaps and survey claims into research opportunities | `research-agenda` |
+| Create contribution packages, claim maps, reports, badge plans, and paper exports | `contribution-package` |
+| Write reports from completed analyses and generated outputs | `research-results-reporting` |
+| Prepare publication figures, tables, captions, source data, and asset maps | `publication-figures-tables` |
 | Check citations, claims, numbers, evidence, bibliography | `citation-claim-audit` |
 | Design/audit CS evaluation, baselines, metrics, ablations, validity | `cs-methodology-evaluation` |
+| Select an accepted paper frame from contributions, evidence, venue fit, and badge fit | `paper-framing` |
+| Build paper-specific release manifests, source maps, locks, checksums, and staged artifacts | `paper-release` |
 | Review a manuscript/proposal as a severe peer reviewer | `adversarial-peer-review` |
 | Draft, revise, polish, or review a paper/proposal | `paper-writing-review` |
+| Manage cover letters, submission checklists, submitted locks, decisions, and camera-ready state | `paper-submission-lifecycle` |
 | Respond to reviews, rebuttal, revision plan, camera-ready changes | `rebuttal-revision-strategy` |
+| Audit badge, open-science, release, transparency, and venue compliance evidence | `badge-compliance-profiles` |
 | Prepare artifact evaluation, code/data release, reproducibility package | `artifact-open-science` |
 | Migrate a bad repo, archive, or notebook pile into the project structure | `repo-migration` |
 | Understand or reproduce an external research repo | `research-repo-reproduction` |
@@ -48,7 +57,7 @@ goal is to route deliberately and preserve project state.
 1. Identify the research artifact being touched: source, claim, data, code, experiment, paper, or project structure.
 2. Check whether the repository follows the contract. If not, adapt conservatively and note the gap.
 3. Route to the narrowest skill that can complete the task.
-4. If several workflows are required, order them as: design/position -> venue/frame -> ingest/convert -> synthesize/review -> evaluate/audit -> write -> rebuttal/artifact -> reproduce/experiment -> update project/wiki.
+4. If several workflows are required, order them as: source ingestion -> SOTA -> survey -> research agenda -> contribution -> analysis -> paper framing -> paper release + manuscript -> submission -> response/revision.
 5. Update `wiki/log.md` or the appropriate output ledger when the task changes project knowledge.
 
 Maintain the Project Quality Contract throughout routing: classify the request,

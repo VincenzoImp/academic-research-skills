@@ -16,6 +16,7 @@ auditable workflow so literature access remains reproducible.
 - `references/external-skill-recommendations.md`
 - `references/source-ledger.md`
 - `references/repository-contract.md`
+- `references/workflow-stage-contracts.md`
 
 If the target repo has `configs/agent-stack.yaml`, read it before selecting MCP
 servers. If it has `docs/agent/capability-profile.md`, treat that as the active
@@ -33,6 +34,10 @@ npm run mcp:smoke -- --env-file .env.local
 Use lower-level `mcp enable`, `mcp env`, `mcp setup`, and `mcp probe` commands
 only when the scenario command is insufficient or the project needs a
 domain-specific server.
+
+For manuscript sync, use Overleaf only after an accepted frame and manuscript
+contract exist. Zotero remains an optional source-ingestion accelerator and
+must reconcile through source, bibliography, and SOTA ledgers.
 
 ## Workflow
 

@@ -34,6 +34,16 @@
       ]
     },
     {
+      "skill": "badge-compliance-profiles",
+      "should_trigger": [
+        "Audit whether this paper can support ACM artifact badges, open-science badges, TOP transparency, and venue compliance profiles.",
+        "Update badge evidence rows for this contribution, paper release, and submission checklist."
+      ],
+      "should_not_trigger": [
+        "Draft the introduction section from an accepted paper frame."
+      ]
+    },
+    {
       "skill": "citation-bibliography-tooling",
       "should_trigger": [
         "Normalize this BibTeX file, citation keys, DOI metadata, and unused references.",
@@ -51,6 +61,16 @@
       ],
       "should_not_trigger": [
         "Convert the paper PDF to Markdown for later reading."
+      ]
+    },
+    {
+      "skill": "contribution-package",
+      "should_trigger": [
+        "Create a contribution package from this accepted research agenda opportunity with a manifest, claim map, badge plan, outputs, report, and paper export.",
+        "Organize this artifact, experiment, analysis, and software contribution under one contribution ID."
+      ],
+      "should_not_trigger": [
+        "Do a quick one-off exploratory plot without promoting it to a contribution."
       ]
     },
     {
@@ -115,6 +135,46 @@
       ]
     },
     {
+      "skill": "paper-framing",
+      "should_trigger": [
+        "Choose a venue-aware paper frame from these reviewed contribution packages and evidence maps.",
+        "Build the argument map, evidence map, badge fit, and release implications before manuscript writing."
+      ],
+      "should_not_trigger": [
+        "Prepare checksums and staged files for an already accepted release plan."
+      ]
+    },
+    {
+      "skill": "paper-release",
+      "should_trigger": [
+        "Create a paper-specific release manifest, source map, lock, checksums, metadata, and staged artifact package.",
+        "Audit whether this paper release package has stale copied files or missing checksum evidence."
+      ],
+      "should_not_trigger": [
+        "Pick the best venue framing for these contributions."
+      ]
+    },
+    {
+      "skill": "paper-submission-lifecycle",
+      "should_trigger": [
+        "Prepare the cover letter, submission checklist, submitted version lock, venue-system notes, and review-round folders for this paper.",
+        "Track the decision letter, correspondence, camera-ready state, and submitted files for this manuscript."
+      ],
+      "should_not_trigger": [
+        "Run a new experiment requested by a reviewer."
+      ]
+    },
+    {
+      "skill": "publication-figures-tables",
+      "should_trigger": [
+        "Prepare publication-facing figures, generated table fragments, captions, source data, and asset-map entries.",
+        "Audit whether these paper figures and tables are stale or inconsistent with the analysis outputs."
+      ],
+      "should_not_trigger": [
+        "Write the response letter to reviewer comments."
+      ]
+    },
+    {
       "skill": "rebuttal-revision-strategy",
       "should_trigger": [
         "Map reviewer comments into concede, defend, reframe, and revise actions for a rebuttal.",
@@ -142,6 +202,26 @@
       ],
       "should_not_trigger": [
         "Review the manuscript as an adversarial peer reviewer."
+      ]
+    },
+    {
+      "skill": "research-agenda",
+      "should_trigger": [
+        "Turn these SOTA gaps and survey claims into prioritized feasible research opportunities.",
+        "Decide which research directions are publishable enough to become contribution packages."
+      ],
+      "should_not_trigger": [
+        "Normalize this BibTeX file."
+      ]
+    },
+    {
+      "skill": "research-results-reporting",
+      "should_trigger": [
+        "Write the analysis report from completed generated tables, figures, limitations, and negative results.",
+        "Summarize result interpretation while linking directly to output data and paper-export assets."
+      ],
+      "should_not_trigger": [
+        "Select a target conference track."
       ]
     },
     {
@@ -223,6 +303,16 @@
       ],
       "should_not_trigger": [
         "Choose between two conference venues."
+      ]
+    },
+    {
+      "skill": "survey-synthesis",
+      "should_trigger": [
+        "Turn reviewed SOTA claims into a section-by-section survey with survey claim ledger rows.",
+        "Plan, draft, and review a survey explaining research threads, methodologies, experiments, gaps, and contradictions."
+      ],
+      "should_not_trigger": [
+        "Run benchmark experiments for a contribution package."
       ]
     },
     {

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Submission Lifecycle"
+  short_description: "Manage per-paper submission packages, cover letters, locks, venue notes, decisions, review rounds, and camera-ready state."
+  default_prompt: "Use $paper-submission-lifecycle to prepare or track submissions without turning communication into evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Survey Synthesis"
+  short_description: "Turn reviewed SOTA claims into structured survey sections, claims, gaps, and final survey artifacts."
+  default_prompt: "Use $survey-synthesis after SOTA claim review to plan, draft, review, and hand off survey sections."

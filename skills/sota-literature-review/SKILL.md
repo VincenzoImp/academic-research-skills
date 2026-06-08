@@ -18,6 +18,7 @@ production.
 - `references/repository-contract.md`
 - `references/source-ledger.md`
 - `references/mcp-catalog.md`
+- `references/workflow-stage-contracts.md`
 - `references/citation-chasing.md`
 - `references/per-source-synthesis-template.md`
 - `references/survey-production.md`
@@ -67,8 +68,12 @@ exhausted and blind spots are documented; do not pad with weak papers.
 12. Write theme-first synthesis in `sota/synthesis.md`, gap analysis in
     `sota/gaps.md`, and when requested a LaTeX survey draft at
     `reports/paper/sota-survey.tex` using `references/survey-production.md`.
-13. Run `citation-claim-audit` before promoting claims into manuscript prose.
-14. When the research idea involves code/data/evaluation artifacts, connect
+13. Promote durable SOTA claims into `sota/sota-claim-ledger.csv` with allowed
+    wording, limitations, contradictions, source IDs, BibTeX keys, review
+    status, and downstream status.
+14. Run `citation-claim-audit` before promoting claims into survey, agenda,
+    framing, or manuscript prose.
+15. When the research idea involves code/data/evaluation artifacts, connect
     gaps and evidence plans to ACM artifact badge readiness through
     `artifact-open-science`.
 
@@ -76,6 +81,13 @@ Keep the Project Quality Contract active across the loop: search metadata,
 reading copies, syntheses, bibliography, LaTeX drafts, and artifact evidence
 belong in separate durable zones, and only audited full-text evidence should be
 promoted into trusted SOTA or manuscript claims.
+
+## Review Loop And Handoff
+
+For each search batch: ingest, screen, read, extract claims, audit citations,
+fix gaps, and re-review until no blocking issue remains. Handoff reviewed SOTA
+claims to `survey-synthesis` and `research-agenda`; do not write survey or
+agenda outputs as hidden side effects of SOTA work.
 
 ## Search Strategy
 

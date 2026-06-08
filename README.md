@@ -41,11 +41,11 @@ policies beside this package; those concepts are consolidated here.
 | Research Area | Skills |
 |---|---|
 | Project Routing | `research-project-router`, `research-project-maintenance`, `repo-migration` |
-| Literature And Sources | `source-ingestion`, `document-conversion`, `sota-literature-review`, `systematic-review-prisma` |
+| Literature And Sources | `source-ingestion`, `document-conversion`, `sota-literature-review`, `systematic-review-prisma`, `survey-synthesis` |
 | Citations And Evidence | `citation-bibliography-tooling`, `citation-claim-audit`, `academic-mcp-tooling` |
-| Research Design | `research-design-positioning`, `cs-methodology-evaluation`, `ethics-data-governance` |
-| Writing And Review | `paper-writing-review`, `adversarial-peer-review`, `rebuttal-revision-strategy`, `cs-venue-strategy` |
-| Artifacts And Execution | `experiment-logbook`, `research-data-analysis`, `research-repo-reproduction`, `artifact-open-science`, `research-ui-prototyping` |
+| Research Design | `research-design-positioning`, `research-agenda`, `contribution-package`, `cs-methodology-evaluation`, `ethics-data-governance` |
+| Writing And Review | `paper-framing`, `paper-writing-review`, `adversarial-peer-review`, `paper-submission-lifecycle`, `rebuttal-revision-strategy`, `cs-venue-strategy` |
+| Artifacts And Execution | `experiment-logbook`, `research-data-analysis`, `research-results-reporting`, `publication-figures-tables`, `research-repo-reproduction`, `paper-release`, `artifact-open-science`, `badge-compliance-profiles`, `research-ui-prototyping` |
 | Skill Quality | `skill-evaluation` |
 
 ## Skills
@@ -58,12 +58,21 @@ policies beside this package; those concepts are consolidated here.
 - `citation-bibliography-tooling`: normalize BibTeX, citation keys, identifiers, and bibliography audits.
 - `sota-literature-review`: build full SOTA reviews from ideas, seeds, or papers with citation chasing, full-text reading, BibTeX gates, survey LaTeX, and gap maps.
 - `systematic-review-prisma`: run reproducible searches, screening, and PRISMA-style review artifacts.
+- `survey-synthesis`: turn reviewed SOTA claims into survey sections, survey claim ledgers, gaps, and final survey artifacts.
 - `citation-claim-audit`: verify claims, citations, evidence, and provenance.
 - `cs-methodology-evaluation`: design and audit CS experiments, baselines, metrics, and validity.
 - `adversarial-peer-review`: review papers like a severe but fair top-venue reviewer.
+- `research-agenda`: prioritize SOTA gaps and survey claims into feasible, publishable research opportunities.
+- `contribution-package`: create contribution packages with manifests, claim maps, badge plans, outputs, reports, reviews, and paper exports.
+- `research-results-reporting`: write analysis and contribution reports from generated outputs without duplicating numeric truth.
+- `publication-figures-tables`: prepare publication-facing figures, tables, captions, source data, and asset maps.
+- `paper-framing`: select accepted paper frames from contributions, evidence, venue fit, badge fit, and release implications.
 - `paper-writing-review`: draft, revise, and review manuscripts without fabricating evidence.
+- `paper-release`: create paper-specific release manifests, source maps, locks, checksums, metadata, reviews, and staged artifacts.
+- `paper-submission-lifecycle`: manage cover letters, submission checklists, submitted locks, decisions, review rounds, and camera-ready state.
 - `rebuttal-revision-strategy`: map reviewer concerns and write precise rebuttals/revisions.
 - `artifact-open-science`: prepare reproducibility packages and ACM-style artifact badge material.
+- `badge-compliance-profiles`: audit badge, open-science, transparency, release, and venue compliance evidence.
 - `repo-migration`: move messy academic repos and archives into the standard project structure.
 - `research-repo-reproduction`: audit and reproduce research code repositories.
 - `experiment-logbook`: run and record bounded experiments and autonomous campaign frontiers.

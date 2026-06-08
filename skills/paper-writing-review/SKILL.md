@@ -15,6 +15,7 @@ methods, limitations, and internal writing review. Use
 
 - `references/repository-contract.md`
 - `references/claim-audit.md`
+- `references/workflow-stage-contracts.md`
 
 ## Inputs
 
@@ -58,11 +59,15 @@ writing plan or evidence-gap list before drafting durable scholarly prose.
 ## Manuscript Workflow
 
 1. Read target venue or artifact requirements.
-2. Load only relevant project evidence.
-3. Make a section plan with claims and required sources.
-4. Draft or revise section-by-section.
-5. Run citation/claim audit on new or changed claims.
-6. Produce unresolved evidence gaps and next checks.
+2. Run `npm run workflow:manuscript` when available.
+3. Read `reports/paper/manuscript-ledger.csv`, manuscript manifest, accepted
+   frame, paper claim map, citation map, asset map, central BibTeX, and release
+   evidence.
+4. Load only relevant project evidence.
+5. Make a section plan with claims and required sources.
+6. Draft or revise section-by-section.
+7. Run citation/claim audit on new or changed claims.
+8. Produce unresolved evidence gaps and next checks.
 
 For existing LaTeX/Typst manuscripts, default to diagnosis and comment-style
 recommendations before source editing. Keep build fixes, bibliography changes,
@@ -75,6 +80,12 @@ tables under `outputs/`, source evidence under `sources/` and `sota/`, and
 scratch drafts or audits outside trusted paper-facing outputs. Do not promote
 text into the manuscript unless citation keys, source IDs, figure/table paths,
 claim IDs, and unresolved evidence gaps remain traceable.
+
+## Review Loop And Handoff
+
+For each manuscript section: plan, draft, audit, review, fix, and re-review
+until no unsupported claim, stale citation, stale asset, missing caveat, or
+draft residue remains. Handoff clean manuscripts to `paper-submission-lifecycle`.
 
 ## Output
 

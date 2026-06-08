@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publication Figures Tables"
+  short_description: "Prepare and audit publication-facing figures, tables, captions, source data, and asset maps."
+  default_prompt: "Use $publication-figures-tables to make paper assets traceable to generated analysis outputs."

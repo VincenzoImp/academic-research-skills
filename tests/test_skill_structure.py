@@ -53,6 +53,7 @@ def test_shared_references_exist() -> None:
         "peer-review-policy.md",
         "research-positioning-policy.md",
         "venue-strategy-policy.md",
+        "workflow-stage-contracts.md",
     }
     present = {path.name for path in (root / "references").glob("*.md")}
     assert expected <= present
@@ -64,20 +65,59 @@ def test_research_lifecycle_skills_exist() -> None:
         "academic-mcp-tooling",
         "adversarial-peer-review",
         "artifact-open-science",
+        "badge-compliance-profiles",
         "citation-bibliography-tooling",
+        "contribution-package",
         "document-conversion",
         "ethics-data-governance",
         "cs-methodology-evaluation",
         "cs-venue-strategy",
         "repo-migration",
+        "paper-framing",
+        "paper-release",
+        "paper-submission-lifecycle",
+        "publication-figures-tables",
         "rebuttal-revision-strategy",
+        "research-agenda",
         "research-design-positioning",
         "skill-evaluation",
+        "survey-synthesis",
+        "research-results-reporting",
         "systematic-review-prisma",
     }
     present = {path.name for path in (root / "skills").iterdir() if path.is_dir()}
     assert expected <= present
-    assert len(present) <= 23
+    assert len(present) <= 32
+
+
+def test_workflow_stage_skills_reference_scaffold_contracts() -> None:
+    root = Path(__file__).resolve().parents[1]
+    expected = {
+        "sota-literature-review": ("npm run workflow:literature", "sota/sota-claim-ledger.csv"),
+        "survey-synthesis": ("npm run workflow:survey", "survey/survey-claim-ledger.csv"),
+        "research-agenda": ("npm run workflow:agenda", "research_agenda/opportunity-ledger.csv"),
+        "contribution-package": ("npm run workflow:contribution", "contributions/contribution-ledger.csv"),
+        "research-data-analysis": ("npm run workflow:analysis", "analysis.yaml"),
+        "paper-framing": ("npm run workflow:frame", "paper_frames/frame-ledger.csv"),
+        "paper-release": ("npm run workflow:release", "paper_releases/release-ledger.csv"),
+        "paper-writing-review": ("npm run workflow:manuscript", "reports/paper/manuscript-ledger.csv"),
+        "paper-submission-lifecycle": ("npm run workflow:submission", "paper_submissions/submission-ledger.csv"),
+        "rebuttal-revision-strategy": ("npm run workflow:response", "paper_submissions/templates/review-rounds"),
+    }
+    for skill_name, required_strings in expected.items():
+        text = (root / "skills" / skill_name / "SKILL.md").read_text(encoding="utf-8")
+        for required in required_strings:
+            assert required in text, f"{skill_name} missing {required}"
+        assert "Review Loop" in text or "review loop" in text.lower()
+        assert "Handoff" in text or "handoff" in text.lower()
+
+
+def test_trigger_boundaries_cover_installed_skills() -> None:
+    root = Path(__file__).resolve().parents[1]
+    present = {path.name for path in (root / "skills").iterdir() if path.is_dir()}
+    data = json.loads((root / "evals" / "trigger-boundaries.json").read_text(encoding="utf-8"))
+    covered = {entry["skill"] for entry in data["skills"]}
+    assert present <= covered
 
 
 def test_each_skill_has_openai_metadata() -> None:

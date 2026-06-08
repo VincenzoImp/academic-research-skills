@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Framing"
+  short_description: "Select accepted paper frames from contribution packages, evidence, venue fit, badge fit, and release implications."
+  default_prompt: "Use $paper-framing before manuscript or release work to choose a reviewed venue-aware frame."

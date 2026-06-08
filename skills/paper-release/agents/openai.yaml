@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Release"
+  short_description: "Create paper-specific releases with manifests, source maps, locks, checksums, metadata, reviews, and staged artifacts."
+  default_prompt: "Use $paper-release to generate reviewed paper release packages from canonical project paths."
