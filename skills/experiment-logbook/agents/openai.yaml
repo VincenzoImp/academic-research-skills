@@ -1,4 +1,0 @@
-interface:
-  display_name: "Experiment Logbook"
-  short_description: "Plan, run, and record bounded experiments, baselines, commands, outputs, failures, and run ledgers."
-  default_prompt: "Use $experiment-logbook to execute or document computational runs with clear commands, configs, outputs, and claim status."

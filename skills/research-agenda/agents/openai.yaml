@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research Agenda"
-  short_description: "Prioritize SOTA gaps and survey claims into feasible, publishable, reviewed research opportunities."
-  default_prompt: "Use $research-agenda to score opportunities, record decisions, and hand off accepted work to contribution packages."

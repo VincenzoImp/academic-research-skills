@@ -1,4 +1,0 @@
-interface:
-  display_name: "Artifact Open Science"
-  short_description: "Prepare reproducibility packages, artifact-evaluation material, public releases, and ACM-style badge evidence."
-  default_prompt: "Use $artifact-open-science to package code, data, commands, licenses, reproducibility evidence, and artifact badge readiness."

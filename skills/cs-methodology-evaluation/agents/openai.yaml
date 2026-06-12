@@ -1,4 +1,0 @@
-interface:
-  display_name: "CS Methodology Evaluation"
-  short_description: "Design and audit CS evaluations, baselines, metrics, ablations, benchmarks, and validity threats."
-  default_prompt: "Use $cs-methodology-evaluation to pressure-test the scientific validity of a CS experiment or evaluation plan."

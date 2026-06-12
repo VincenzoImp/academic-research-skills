@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research Results Reporting"
-  short_description: "Write reviewed analysis and contribution reports from generated data, tables, figures, and limitations."
-  default_prompt: "Use $research-results-reporting after analysis outputs exist to write reports without duplicating numeric truth."
