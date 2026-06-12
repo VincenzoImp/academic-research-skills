@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research UI Prototyping"
-  short_description: "Build research dashboards, annotation tools, demos, and paper-supporting interfaces with traceable data."
-  default_prompt: "Use $research-ui-prototyping to design a research-facing UI that supports analysis, annotation, demo, or paper evidence."

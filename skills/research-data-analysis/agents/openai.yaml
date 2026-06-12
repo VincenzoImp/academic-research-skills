@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research Data Analysis"
-  short_description: "Analyze research data, statistics, tables, figures, result summaries, and notebook-to-code transitions."
-  default_prompt: "Use $research-data-analysis to produce defensible analyses, publication-ready tables or figures, and traceable result notes."

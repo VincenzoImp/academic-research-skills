@@ -1,4 +1,0 @@
-interface:
-  display_name: "Contribution Package"
-  short_description: "Create contribution packages with manifests, claim maps, badge plans, outputs, reports, reviews, and paper exports."
-  default_prompt: "Use $contribution-package to turn accepted agenda opportunities into traceable contribution packages."

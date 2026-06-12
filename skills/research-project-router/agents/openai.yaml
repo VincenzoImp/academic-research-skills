@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research Project Router"
-  short_description: "Choose the right academic workflow when a research-repo task spans multiple skills or artifacts."
-  default_prompt: "Use $research-project-router to identify the artifact being touched, route to the narrowest workflow, and preserve project state."

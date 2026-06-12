@@ -1,4 +1,0 @@
-interface:
-  display_name: "Academic MCP Tooling"
-  short_description: "Choose, configure, smoke-test, and document scholarly MCP servers and literature workflow stacks."
-  default_prompt: "Use $academic-mcp-tooling to prepare scholarly MCP access for search, citation graphs, metadata, Zotero, Overleaf, or source workflows."

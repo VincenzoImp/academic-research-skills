@@ -1,4 +1,0 @@
-interface:
-  display_name: "CS Venue Strategy"
-  short_description: "Choose CS venues, tracks, audiences, contribution framing, review criteria, and submission risks."
-  default_prompt: "Use $cs-venue-strategy to map a project to suitable CS venues and adapt claims, evaluation, and writing to reviewer expectations."

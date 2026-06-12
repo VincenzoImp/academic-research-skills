@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research Repo Reproduction"
-  short_description: "Audit, run, and reproduce external research repositories with conservative patches and evidence records."
-  default_prompt: "Use $research-repo-reproduction to inspect an external repo, establish runnable commands, and document reproduction evidence."

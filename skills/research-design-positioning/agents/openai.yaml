@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research Design Positioning"
-  short_description: "Frame research questions, claims, scope, evidence paths, and novelty before experiments or writing."
-  default_prompt: "Use $research-design-positioning to turn the project idea into defensible research questions, contribution claims, and an evidence plan."

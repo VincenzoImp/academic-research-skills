@@ -1,4 +1,0 @@
-interface:
-  display_name: "Badge Compliance Profiles"
-  short_description: "Audit badge, open-science, transparency, release, and venue compliance profiles against concrete evidence."
-  default_prompt: "Use $badge-compliance-profiles to connect badge claims to evidence ledgers and blocking-gap reviews."
