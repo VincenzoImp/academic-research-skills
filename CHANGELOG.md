@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.1
+
+- MCP Preflight (digest-paper, explore-sota) is now a capability gate, never
+  an API-key gate. SOTA work starts when `arxiv` (full text) and at least one
+  bibliographic source (`semantic-scholar`, `dblp`, or `openalex`) respond. A
+  missing key only throttles; a reachable source being down degrades the
+  cross-check rather than stopping. Previously the gate hard-required `arxiv`
+  + `semantic-scholar`, so a transient `semantic-scholar` issue blocked all
+  SOTA work. Pairs with create-academic-research 0.2.1.
+
 ## 0.2.0
 
 Full from-scratch rewrite for the create-academic-research v0.2 scaffold.

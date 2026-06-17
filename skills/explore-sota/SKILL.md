@@ -20,8 +20,10 @@ targeted expansions alike.
 
 ## MCP Preflight (hard gate)
 
-Same gate as digest-paper: one trivial query against `arxiv` and one against
-`semantic-scholar`. If either fails: STOP and report. No fallback to model
+Same gate as digest-paper: by capability, never by API key. `arxiv` must
+respond AND at least one of `semantic-scholar`, `dblp`, or `openalex`. If the
+gate is unmet: STOP and report. A missing key only throttles; a reachable
+source being down degrades the cross-check, not a stop. No fallback to model
 memory or web scraping.
 
 ## Procedure

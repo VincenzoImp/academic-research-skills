@@ -17,11 +17,20 @@ Never leave a partial digest.
 
 ## MCP Preflight (hard gate)
 
-Before anything else, run one trivial query against the `arxiv` MCP server
-and one against `semantic-scholar` (e.g., search a known title). If either
-fails to respond: STOP. Report the failure and ask the user to fix the MCP
-setup. Do not fall back to model memory, web search, or scraping. A citation
-exists only if an MCP lookup produced it.
+Before anything else, probe the scholarly MCP servers with one trivial query
+each (e.g., search a known title). The gate is by capability, never by API
+key — a missing key only throttles, it never blocks:
+
+- **Required:** `arxiv` (full text) must respond, AND at least one
+  bibliographic source — `semantic-scholar`, `dblp`, or `openalex` — must
+  respond.
+- If those required capabilities are unavailable: STOP, report which servers
+  failed, and ask the user to fix the MCP setup.
+- If a reachable source is down but the gate is met, proceed and note the
+  reduced cross-check in the synthesis.
+
+Never fall back to model memory, web search, or scraping. A citation exists
+only if an MCP lookup produced it.
 
 ## Procedure
 
