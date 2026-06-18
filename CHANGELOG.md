@@ -9,6 +9,13 @@
   cross-check rather than stopping. Previously the gate hard-required `arxiv`
   + `semantic-scholar`, so a transient `semantic-scholar` issue blocked all
   SOTA work. Pairs with create-academic-research 0.2.1.
+- `digest-paper` full-text retrieval (step 4) is now a fallback pipeline,
+  most-authoritative/legal first: arxiv → publisher/DOI open-access →
+  Unpaywall → green-OA repositories → Sci-Hub (opt-in, last resort, via
+  paper-search). The PDF is only the reading copy — the citation and
+  authoritative version always come from the scholarly MCPs (reconciled by
+  DOI); the source URL is recorded in `pdf_source`. Stops as
+  `unresolvable-via-mcp` only when every source fails.
 
 ## 0.2.0
 

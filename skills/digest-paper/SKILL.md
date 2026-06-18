@@ -43,10 +43,16 @@ only if an MCP lookup produced it.
 3. Choose the citekey (`<firstauthor><year><topicword>`, lowercase) and
    check it is unused: not in `references.bib`, no
    `sota/papers/<citekey>/` folder.
-4. Create `sota/papers/<citekey>/` and download the full-text PDF as
-   `paper.pdf` (arxiv MCP for arXiv papers; otherwise the open-access URL
-   from the MCP metadata). If no legal full text is found, stop, remove the
-   folder, and record the candidate in `sota/queue.md` with decision
+4. Create `sota/papers/<citekey>/` and fetch the full-text PDF as `paper.pdf`
+   through the fallback pipeline, most-authoritative/legal first:
+   (1) arxiv MCP for arXiv papers; (2) otherwise paper-search, which falls back
+   publisher/DOI open-access → Unpaywall → green-OA repositories (Europe
+   PMC/PMC, CORE, OpenAIRE, Zenodo, HAL, SSRN, …) → Sci-Hub as the last resort.
+   Record the resulting URL in `metadata.yaml` (`pdf_source`). The PDF is only
+   the reading copy: the citation and the authoritative version always come
+   from the scholarly MCPs (reconciled by DOI), never from where the PDF was
+   fetched. If even the last resort yields nothing, stop, remove the folder,
+   and record the candidate in `sota/queue.md` with decision
    `unresolvable-via-mcp`. Abstract-only digestion is forbidden.
 5. Read the full paper — the PDF, cover to cover, not the abstract.
 6. Write `synthesis.md` following the exact section order in
