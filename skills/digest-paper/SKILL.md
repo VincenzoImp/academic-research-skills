@@ -17,11 +17,20 @@ Never leave a partial digest.
 
 ## MCP Preflight (hard gate)
 
-Before anything else, run one trivial query against the `arxiv` MCP server
-and one against `semantic-scholar` (e.g., search a known title). If either
-fails to respond: STOP. Report the failure and ask the user to fix the MCP
-setup. Do not fall back to model memory, web search, or scraping. A citation
-exists only if an MCP lookup produced it.
+Before anything else, probe the scholarly MCP servers with one trivial query
+each (e.g., search a known title). The gate is by capability, never by API
+key — a missing key only throttles, it never blocks:
+
+- **Required:** `arxiv` (full text) must respond, AND at least one
+  bibliographic source — `semantic-scholar`, `dblp`, or `openalex` — must
+  respond.
+- If those required capabilities are unavailable: STOP, report which servers
+  failed, and ask the user to fix the MCP setup.
+- If a reachable source is down but the gate is met, proceed and note the
+  reduced cross-check in the synthesis.
+
+Never fall back to model memory, web search, or scraping. A citation exists
+only if an MCP lookup produced it.
 
 ## Procedure
 
@@ -34,10 +43,16 @@ exists only if an MCP lookup produced it.
 3. Choose the citekey (`<firstauthor><year><topicword>`, lowercase) and
    check it is unused: not in `references.bib`, no
    `sota/papers/<citekey>/` folder.
-4. Create `sota/papers/<citekey>/` and download the full-text PDF as
-   `paper.pdf` (arxiv MCP for arXiv papers; otherwise the open-access URL
-   from the MCP metadata). If no legal full text is found, stop, remove the
-   folder, and record the candidate in `sota/queue.md` with decision
+4. Create `sota/papers/<citekey>/` and fetch the full-text PDF as `paper.pdf`
+   through the fallback pipeline, most-authoritative/legal first:
+   (1) arxiv MCP for arXiv papers; (2) otherwise paper-search, which falls back
+   publisher/DOI open-access → Unpaywall → green-OA repositories (Europe
+   PMC/PMC, CORE, OpenAIRE, Zenodo, HAL, SSRN, …) → Sci-Hub as the last resort.
+   Record the resulting URL in `metadata.yaml` (`pdf_source`). The PDF is only
+   the reading copy: the citation and the authoritative version always come
+   from the scholarly MCPs (reconciled by DOI), never from where the PDF was
+   fetched. If even the last resort yields nothing, stop, remove the folder,
+   and record the candidate in `sota/queue.md` with decision
    `unresolvable-via-mcp`. Abstract-only digestion is forbidden.
 5. Read the full paper — the PDF, cover to cover, not the abstract.
 6. Write `synthesis.md` following the exact section order in
