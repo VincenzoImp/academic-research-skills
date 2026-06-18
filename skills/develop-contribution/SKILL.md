@@ -37,8 +37,10 @@ If the claim has no evidence path, stop and discuss with the user.
 2. Python code? Write the contribution's own `pyproject.toml` (name,
    requires-python, dependencies), add `"contributions/<slug>"` to
    `[tool.uv.workspace] members` in the root `pyproject.toml`, run
-   `uv sync` from the root. Genuinely conflicting dependencies → move the
-   path to `exclude`, create a local venv, document it in the README.
+   `uv sync --all-packages` from the root (plain `uv sync` prunes the
+   members' dependencies on a `package = false` root). Genuinely conflicting
+   dependencies → move the path to `exclude`, create a local venv, document
+   it in the README.
 3. Develop inside the folder — free-form structure (`src/`, `data/`,
    `figures/`, `outputs/`, notebooks). Follow `references/methodology.md`
    for any evaluation; keep a run log per `references/experiments.md` for
