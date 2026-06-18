@@ -37,9 +37,10 @@ memory or web scraping.
 2. **Seeds.** Build a diversified seed set: user-named papers, already
    digested papers, seminal works found via MCP search, recent frontier
    papers. Never start from a single author group, venue, or survey.
-3. **Search.** Run keyword queries on every configured scholarly MCP — arxiv,
-   semantic-scholar, dblp, openalex, and the paper-search aggregator. Short,
-   high-signal queries; record productive terms in the Scope block.
+3. **Search.** Run keyword queries on every configured scholarly MCP — the
+   always-on arxiv, semantic-scholar, dblp, and the paper-search aggregator,
+   plus openalex when enabled. Short, high-signal queries; record productive
+   terms in the Scope block.
 4. **Chase.** For each digested seed, fetch outgoing references and
    incoming citations via semantic-scholar — one hop at a time, per
    `references/citation-chasing.md`.

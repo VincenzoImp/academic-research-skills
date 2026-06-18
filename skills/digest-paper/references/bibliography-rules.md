@@ -19,8 +19,8 @@
 
 ## Cross-validation
 
-- query every configured scholarly MCP: semantic-scholar, dblp, and openalex
-  always; arxiv for arXiv records
+- query every configured scholarly MCP: semantic-scholar and dblp always,
+  openalex when enabled, arxiv for arXiv records
 - field disagreements resolve by precedence:
   dblp (CS venues/BibTeX) > semantic-scholar > openalex > arxiv
 - the DOI is the canonical identifier used to reconcile records across
