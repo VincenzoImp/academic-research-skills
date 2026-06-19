@@ -17,6 +17,9 @@ should need to reopen syntheses or PDFs for the large majority of questions.
 - `survey/coverage.md` — what the survey currently integrates
 - `references/survey-content.md` — content checklist and style
 
+The survey renders citations **author-year** (biblatex `style=authoryear`, per
+`survey/README.md`) — a discursive review reads better than numbered `[1]`.
+
 ## Mode Selection
 
 - `survey/coverage.md` lists no citekeys → **create mode**.

@@ -18,6 +18,9 @@ paper writing never needs to re-read the code.
 - `references/experiments.md` — run logs and autonomous campaigns
 - `references/reproduction.md` — reproducing external work
 - `references/ethics.md` — data red flags
+- `references/data.md` — data placement and inter-contribution data
+  dependencies (when the contribution has shared/large data or consumes
+  another contribution's output)
 
 ## Before Building (both modes)
 
@@ -65,7 +68,9 @@ If the claim has no evidence path, stop and discuss with the user.
 ## Rules
 
 - Self-contained: no imports from other contributions; tooling worth
-  sharing becomes its own contribution referenced in the README.
+  sharing becomes its own contribution referenced in the README. If the input
+  is another contribution's output, declare it and read it in place — never
+  copy (see `references/data.md`).
 - Exploratory results never masquerade as confirmed evidence — label them.
 - Negative results are results: report them in report.tex.
 

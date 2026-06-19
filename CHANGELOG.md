@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.3.0
+
+Documentation and conventions release: aligns the skills with
+create-academic-research 0.3.0 and closes the remaining gaps that kept the set
+from being feature-complete. No behavioural change to existing procedures.
+
+- Per-document bibliography style is now documented where it is used:
+  `write-survey` states the survey renders **author-year** (biblatex
+  `style=authoryear`); `write-paper` states the base manuscript defaults to
+  **numeric**, the venue class sets the final style, and the shared root
+  `references.bib` is cited per-document, not per-entry (contribution reports
+  stay numeric).
+- `package-artifacts` gains a **Rules** section (never hand-edit staged copies;
+  strip gitignored/secret/raw-sensitive material; the bundle is self-contained)
+  — matching the structure of every other skill.
+- New optional reference `develop-contribution/references/data.md`: a balanced,
+  opt-in convention for contribution data placement (private-small vs
+  large/gitignored, the optional per-contribution `data/<slug>/` root with
+  raw/interim/processed tiers) and for **inter-contribution data dependencies**
+  (declare the producer + dataset, read it in place, never copy; single
+  source-of-truth paths). It follows the existing opt-in reference pattern
+  (ethics/experiments/methodology/reproduction), so theory, survey, and
+  reproduction projects are unaffected.
+- Pairs with create-academic-research 0.3.0.
+
 ## 0.2.1
 
 - MCP Preflight (digest-paper, explore-sota) is now a capability gate, never

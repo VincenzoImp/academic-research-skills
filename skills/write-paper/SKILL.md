@@ -30,7 +30,10 @@ supply technical content; the root `references.bib` supplies every citation.
 3. **Template.** Import the venue's official LaTeX template into
    `manuscript/`; rename the entry point to `main.tex`. Use the bib system
    the venue class dictates (bibtex/natbib or biblatex), reading the root
-   `references.bib` via relative path.
+   `references.bib` via relative path. The base manuscript defaults to
+   **numeric** (biblatex); the venue class sets the final style. The same root
+   `references.bib` is shared with the survey (author-year) — bibliography
+   **style is per-document, not per-entry**; contribution reports stay numeric.
 4. **Write.** Section by section: related work distilled from the survey
    (theme-first, never paper-by-paper); methods/results from the
    contribution reports and their figures; every `\cite{}` resolves in the

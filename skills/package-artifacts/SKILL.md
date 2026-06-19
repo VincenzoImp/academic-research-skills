@@ -34,6 +34,14 @@ or artifact-evaluation committee receives.
 6. Walk `references/artifact-standard.md` and the venue checklist item by
    item; record the mapping in the artifact README.
 
+## Rules
+
+- Never hand-edit staged contribution copies: fix problems at the source
+  contribution and re-stage.
+- Strip gitignored material, secrets, and raw sensitive data before shipment.
+- The bundle is self-contained: environment, data provenance, and bibliography
+  resolve inside it — no `../` references or external paths.
+
 ## Done When
 
 - The bundle satisfies the venue requirements and the artifact standard,
