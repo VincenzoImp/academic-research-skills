@@ -8,8 +8,8 @@ SOTA → survey → contributions → papers.
 
 Designed for repositories created by
 [`create-academic-research`](https://github.com/VincenzoImp/create-academic-research)
-(v0.2 scaffold), whose directory structure and formats the skills rely on:
-one root `references.bib`, `sota/papers/<citekey>/` folders,
+(paired with the 0.3.0 scaffold), whose directory structure and formats the
+skills rely on: one root `references.bib`, `sota/papers/<citekey>/` folders,
 `survey/coverage.md`, self-contained `contributions/<slug>/` folders, and
 per-venue `papers/<slug>/` folders. The skills are portable `SKILL.md`
 files and work with any Agent-Skills-compatible runtime.
@@ -36,10 +36,14 @@ npx -y skills add VincenzoImp/academic-research-skills --skill '*' --copy -y
 | `manage-submission` | freeze submission rounds, map reviewer concerns, draft rebuttals, apply revisions, camera-ready |
 | `adversarial-review` | review the survey, a contribution, or a paper as a severe but fair reviewer |
 
+Each skill is a `SKILL.md` procedure with optional `references/` files carrying
+the deeper conventions (bibliography rules, citation chasing, experiment/data/
+ethics/reproduction conventions, venue fit, writing rules, and so on).
+
 ## Hard Rules Baked In
 
 - A citation exists only if a scholarly MCP lookup produced it; SOTA skills
-  stop when `arxiv` or `semantic-scholar` are unavailable.
+  stop when the scholarly sources are unavailable.
 - Digestion is atomic: paper folder, synthesis, bib entry, citation graph,
   and index row land together or not at all.
 - The survey's create mode reads every synthesis before writing a word.
